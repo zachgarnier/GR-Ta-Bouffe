@@ -28,5 +28,10 @@
     "name": "Sauce soja",
     "unit": "ml",
     "description": "sauce salé de préférence"
+  },
+  {
+    "name": "chocolat",
+    "unit": "grammes",
+    "description": ""
   }
 ]
