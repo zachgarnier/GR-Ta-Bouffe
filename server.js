@@ -5,16 +5,32 @@ const path = require('path');
 const GH_TOKEN_PATH = '/etc/secrets/GH_TOKEN';
 let GH_TOKEN = '';
 
+
+const repoPath = __dirname; // dossier racine
+const branch = 'main'; // ou 'master'
+const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
+
+try {
+  process.chdir(repoPath); // se placer dans le bon dossier
+
+  try {
+    execSync('git status', { stdio: 'ignore' });
+    console.log('✅ Repo Git déjà initialisé.');
+  } catch {
+    console.log('🔧 Initialisation du repo Git...');
+    execSync('git init');
+    execSync(`git checkout -b ${branch}`);
+    execSync(`git remote add origin ${remoteUrl}`);
+    console.log('✅ Remote "origin" ajoutée.');
+  }
+} catch (err) {
+  console.error("❌ Erreur d'initialisation Git :", err.message);
+}
+
 try {
   GH_TOKEN = fs.readFileSync(GH_TOKEN_PATH, 'utf8').trim();
   console.log("✅ Token GitHub lu depuis les secrets");
 
-  // Remplace ici :
-  const githubUsername = 'zachgarnier';     // ← Ton nom GitHub
-  const githubRepo = 'GR-Ta-Bouffe';             // ← Nom du repo
-  const branch = 'main';                     // ← ou 'master' selon ton repo
-
-  const remoteUrl = `https://${GH_TOKEN}@github.com/${githubUsername}/${githubRepo}.git`;
 
   // === Initialiser git s’il n’existe pas
   try {
