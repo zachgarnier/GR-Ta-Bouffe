@@ -5,13 +5,15 @@ const path = require('path');
 const GH_TOKEN_PATH = '/etc/secrets/GH_TOKEN';
 let GH_TOKEN = '';
 
-
-const repoPath = __dirname; // dossier racine
-const branch = 'main'; // ou 'master'
-const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
-
 try {
-  process.chdir(repoPath); // se placer dans le bon dossier
+  GH_TOKEN = fs.readFileSync(GH_TOKEN_PATH, 'utf8').trim();
+  console.log("✅ Token GitHub lu depuis les secrets");
+
+  const repoPath = __dirname;
+  const branch = 'main';
+  const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
+
+  process.chdir(repoPath);
 
   try {
     execSync('git status', { stdio: 'ignore' });
@@ -23,35 +25,16 @@ try {
     execSync(`git remote add origin ${remoteUrl}`);
     console.log('✅ Remote "origin" ajoutée.');
   }
-} catch (err) {
-  console.error("❌ Erreur d'initialisation Git :", err.message);
-}
 
-try {
-  GH_TOKEN = fs.readFileSync(GH_TOKEN_PATH, 'utf8').trim();
-  console.log("✅ Token GitHub lu depuis les secrets");
-
-
-  // === Initialiser git s’il n’existe pas
-  try {
-    execSync('git rev-parse --is-inside-work-tree');
-    console.log('✅ Git déjà initialisé');
-  } catch {
-    console.log('🔧 Git non initialisé, création en cours...');
-    execSync('git init');
-    execSync(`git remote add origin ${remoteUrl}`);
-    execSync('git fetch origin');
-    execSync(`git checkout -b ${branch}`);
-  }
-
-  // Configure git user
+  // Configuration git globale
   execSync(`git config --global user.email "autobot@example.com"`);
   execSync(`git config --global user.name "Render Backup Bot"`);
-
   console.log("✅ Git configuré pour push");
+
 } catch (err) {
   console.error("❌ Erreur config GitHub :", err.message);
 }
+
 
 
 
