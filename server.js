@@ -2,7 +2,6 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-// Récupérer le token depuis le fichier secret
 const GH_TOKEN_PATH = '/etc/secrets/GH_TOKEN';
 let GH_TOKEN = '';
 
@@ -10,21 +9,34 @@ try {
   GH_TOKEN = fs.readFileSync(GH_TOKEN_PATH, 'utf8').trim();
   console.log("✅ Token GitHub lu depuis les secrets");
 
-  // Configure Git pour autoriser le push
+  // Remplace ici :
+  const githubUsername = 'zachgarnier';     // ← Ton nom GitHub
+  const githubRepo = 'GR-Ta-Bouffe';             // ← Nom du repo
+  const branch = 'main';                     // ← ou 'master' selon ton repo
+
+  const remoteUrl = `https://${GH_TOKEN}@github.com/${githubUsername}/${githubRepo}.git`;
+
+  // === Initialiser git s’il n’existe pas
+  try {
+    execSync('git rev-parse --is-inside-work-tree');
+    console.log('✅ Git déjà initialisé');
+  } catch {
+    console.log('🔧 Git non initialisé, création en cours...');
+    execSync('git init');
+    execSync(`git remote add origin ${remoteUrl}`);
+    execSync('git fetch origin');
+    execSync(`git checkout -b ${branch}`);
+  }
+
+  // Configure git user
   execSync(`git config --global user.email "autobot@example.com"`);
   execSync(`git config --global user.name "Render Backup Bot"`);
 
-  // Remplace l’URL distante avec le token
-  const githubUsername = 'TON-USERNAME';        // 👈 remplace ici
-  const githubRepo = 'TON-REPO';                // 👈 remplace ici
-
-  const remoteUrl = `https://${GH_TOKEN}@github.com/${githubUsername}/${githubRepo}.git`;
-  execSync(`git remote set-url origin ${remoteUrl}`);
-
-  console.log("✅ Git configuré pour push avec token");
+  console.log("✅ Git configuré pour push");
 } catch (err) {
   console.error("❌ Erreur config GitHub :", err.message);
 }
+
 
 
 
