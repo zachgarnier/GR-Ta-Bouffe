@@ -109,6 +109,18 @@ function createRow({ name = '', unit = '', description = '' } = {}, ingredients,
 };
 
 
+  tdSave.appendChild(saveBtn);
+  tdDelete.appendChild(deleteBtn);
+
+  tr.appendChild(tdName);
+  tr.appendChild(tdUnit);
+  tr.appendChild(tdDesc);
+  tr.appendChild(tdSave);
+  tr.appendChild(tdDelete);
+
+  return tr;
+}
+
 async function renderTable() {
   const tbody = document.querySelector('#ingredientTable tbody');
   tbody.innerHTML = '';
