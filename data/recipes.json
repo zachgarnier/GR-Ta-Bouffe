@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Curry Riz Lentilles",
+    "description": "Un plat chaud et réconfortant",
+    "ingredients": [
+      {
+        "name": "Riz",
+        "quantity": 300
+      },
+      {
+        "name": "Lentilles",
+        "quantity": 50
+      }
+    ]
+  },
+  {
+    "name": "Toast de chèvre miel au four",
+    "description": "Plat pour une personne",
+    "ingredients": [
+      {
+        "name": "Pain de mis",
+        "quantity": 4
+      },
+      {
+        "name": "Miel",
+        "quantity": 2
+      },
+      {
+        "name": "Frommage de chèvre",
+        "quantity": 300
+      }
+    ]
+  },
+  {
+    "name": "Riz asiatique",
+    "description": "On se régale en voyage",
+    "ingredients": [
+      {
+        "name": "Riz",
+        "quantity": 300
+      },
+      {
+        "name": "Sauce soja",
+        "quantity": 10
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  padding: 2em;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 2em;
+}
+
+.day {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+}
+
+.day h2 {
+  color: #2e7d32;
+  margin-top: 0;
+}
+
+.day p.description {
+  font-style: italic;
+  margin: 0.5em 0 1em;
+}
+
+.meal-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.meal-list li {
+  padding: 0.3em 0;
+  border-bottom: 1px solid #eee;
+}

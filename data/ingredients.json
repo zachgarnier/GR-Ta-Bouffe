@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Riz",
+    "unit": "grammes",
+    "description": "Riz blanc long grain"
+  },
+  {
+    "name": "Lentilles",
+    "unit": "grammes",
+    "description": "Lentilles vertes du puy"
+  },
+  {
+    "name": "Pain de mis",
+    "unit": "tranches",
+    "description": ""
+  },
+  {
+    "name": "Frommage de chèvre",
+    "unit": "grammes",
+    "description": ""
+  },
+  {
+    "name": "Miel",
+    "unit": "cuillères",
+    "description": ""
+  },
+  {
+    "name": "Sauce soja",
+    "unit": "ml",
+    "description": "sauce salé de préférence"
+  }
+]

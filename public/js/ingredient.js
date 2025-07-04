@@ -1,0 +1,118 @@
+const API_URL = '/api/ingredients';
+
+async function fetchIngredients() {
+  const res = await fetch(API_URL);
+  return await res.json();
+}
+
+async function saveIngredientsToServer(ingredients) {
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(ingredients)
+  });
+  if (!res.ok) alert("Erreur lors de l'enregistrement.");
+}
+
+function createRow({ name = '', unit = '', description = '' } = {}, ingredients, index = null) {
+  const tr = document.createElement('tr');
+
+  const nameInput = document.createElement('input');
+  nameInput.value = name;
+
+  const unitInput = document.createElement('input');
+  unitInput.value = unit;
+
+  const descInput = document.createElement('input');
+  descInput.value = description;
+
+  const tdName = document.createElement('td');
+  const tdUnit = document.createElement('td');
+  const tdDesc = document.createElement('td');
+  const tdSave = document.createElement('td');
+  const tdDelete = document.createElement('td');
+
+  tdName.appendChild(nameInput);
+  tdUnit.appendChild(unitInput);
+  tdDesc.appendChild(descInput);
+
+  const saveBtn = document.createElement('button');
+  saveBtn.textContent = 'Enregistrer';
+  saveBtn.classList.add('save');
+
+  saveBtn.onclick = async () => {
+    const newName = nameInput.value.trim();
+    const newUnit = unitInput.value.trim();
+    const newDesc = descInput.value.trim();
+
+    if (!newName) {
+      alert("Le nom est obligatoire.");
+      return;
+    }
+
+    const existingIndex = ingredients.findIndex(i => i.name === newName);
+
+    if (index === null) {
+      if (existingIndex !== -1) {
+        alert("Un ingrédient avec ce nom existe déjà.");
+        return;
+      }
+      ingredients.push({ name: newName, unit: newUnit, description: newDesc });
+    } else {
+      // Si le nom a changé ET qu’un autre ingrédient porte déjà ce nouveau nom
+      if (newName !== ingredients[index].name && existingIndex !== -1) {
+        alert("Un autre ingrédient a déjà ce nom.");
+        return;
+      }
+      ingredients[index] = { name: newName, unit: newUnit, description: newDesc };
+    }
+
+    await saveIngredientsToServer(ingredients);
+    renderTable();
+  };
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Supprimer';
+  deleteBtn.classList.add('delete');
+
+  deleteBtn.onclick = async () => {
+    if (index === null) {
+      nameInput.value = '';
+      unitInput.value = '';
+      descInput.value = '';
+      return;
+    }
+    ingredients.splice(index, 1);
+    await saveIngredientsToServer(ingredients);
+    renderTable();
+  };
+
+  tdSave.appendChild(saveBtn);
+  tdDelete.appendChild(deleteBtn);
+
+  tr.appendChild(tdName);
+  tr.appendChild(tdUnit);
+  tr.appendChild(tdDesc);
+  tr.appendChild(tdSave);
+  tr.appendChild(tdDelete);
+
+  return tr;
+}
+
+async function renderTable() {
+  const tbody = document.querySelector('#ingredientTable tbody');
+  tbody.innerHTML = '';
+
+  const ingredients = await fetchIngredients();
+
+  ingredients.forEach((ingredient, index) => {
+    const row = createRow(ingredient, ingredients, index);
+    tbody.appendChild(row);
+  });
+
+  // Ligne vide en bas
+  const emptyRow = createRow({}, ingredients, null);
+  tbody.appendChild(emptyRow);
+}
+
+document.addEventListener('DOMContentLoaded', renderTable);
