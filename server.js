@@ -29,6 +29,12 @@ try {
       } else {
         console.log('✅ Remote "origin" déjà configurée.');
       }
+      try {
+        execSync(`git checkout -B main`); // force la branche main, même en détaché
+        console.log('✅ Branche main utilisée.');
+      } catch (err) {
+        console.error("❌ Impossible de passer sur main :", err.message);
+      }
     } catch (err) {
       console.error("❌ Erreur vérif remote origin :", err.message);
     }
