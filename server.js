@@ -18,6 +18,20 @@ try {
   try {
     execSync('git status', { stdio: 'ignore' });
     console.log('✅ Repo Git déjà initialisé.');
+
+    // Vérifie si remote 'origin' existe
+    try {
+      const remotes = execSync('git remote').toString().trim().split('\n');
+      if (!remotes.includes('origin')) {
+        console.log('🔗 Remote "origin" manquant, ajout en cours...');
+        execSync(`git remote add origin ${remoteUrl}`);
+        console.log('✅ Remote "origin" ajoutée.');
+      } else {
+        console.log('✅ Remote "origin" déjà configurée.');
+      }
+    } catch (err) {
+      console.error("❌ Erreur vérif remote origin :", err.message);
+    }
   } catch {
     console.log('🔧 Initialisation du repo Git...');
     execSync('git init');
