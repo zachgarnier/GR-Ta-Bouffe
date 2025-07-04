@@ -76,28 +76,38 @@ function createRow({ name = '', unit = '', description = '' } = {}, ingredients,
   deleteBtn.classList.add('delete');
 
   deleteBtn.onclick = async () => {
-    if (index === null) {
-      nameInput.value = '';
-      unitInput.value = '';
-      descInput.value = '';
-      return;
-    }
-    ingredients.splice(index, 1);
-    await saveIngredientsToServer(ingredients);
-    renderTable();
-  };
+  if (index === null) {
+    nameInput.value = '';
+    unitInput.value = '';
+    descInput.value = '';
+    return;
+  }
 
-  tdSave.appendChild(saveBtn);
-  tdDelete.appendChild(deleteBtn);
+  const ingredientToDelete = ingredients[index].name;
 
-  tr.appendChild(tdName);
-  tr.appendChild(tdUnit);
-  tr.appendChild(tdDesc);
-  tr.appendChild(tdSave);
-  tr.appendChild(tdDelete);
+  // On va chercher toutes les recettes
+  const recipesRes = await fetch('/api/recipes');
+  const recipes = await recipesRes.json();
 
-  return tr;
-}
+  // Vérifie si l'ingrédient est utilisé dans une recette
+  const usedInRecipes = recipes.filter(recipe =>
+    recipe.ingredients && recipe.ingredients.some(ing =>
+      (typeof ing === 'string' && ing === ingredientToDelete) ||
+      (typeof ing === 'object' && ing.name === ingredientToDelete)
+    )
+  );
+
+  if (usedInRecipes.length > 0) {
+    alert(`Impossible de supprimer : l'ingrédient est utilisé dans ${usedInRecipes.length} recette(s).`);
+    return;
+  }
+
+  // Si non utilisé, on peut le supprimer
+  ingredients.splice(index, 1);
+  await saveIngredientsToServer(ingredients);
+  renderTable();
+};
+
 
 async function renderTable() {
   const tbody = document.querySelector('#ingredientTable tbody');
