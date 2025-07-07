@@ -7,10 +7,19 @@ const { execSync } = require('child_process');
 // === INIT ===
 const app = express();
 const PORT = process.env.PORT || 3000;
-const GIT_PASSWORD = process.env.GIT_PASSWORD || "8245"; // 🔐 Met ton mot de passe Render ici
-const GH_TOKEN = process.env.GH_TOKEN || ""; // 🔐 Ton token GitHub sécurisé
+const GIT_PASSWORD = "8245"; // 🔐 change si besoin
+const GH_TOKEN_PATH = "/etc/secrets/GH_TOKEN"; // 🔐 fichier secret Render
 const repoPath = __dirname;
 const branch = 'main';
+
+// === LECTURE DU TOKEN GITHUB ===
+let GH_TOKEN = "";
+try {
+  GH_TOKEN = fs.readFileSync(GH_TOKEN_PATH, 'utf8').trim();
+  console.log("✅ Token GitHub lu depuis le fichier secret");
+} catch (err) {
+  console.warn("❌ Token GitHub introuvable : " + err.message);
+}
 
 // === MIDDLEWARES ===
 app.use(express.json());
@@ -19,7 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // === UTILS ===
 const getFilePath = (filename) => path.join(__dirname, 'data', filename);
 
-// === API INGREDIENTS ===
+// === ROUTES API ===
+
+// --- INGREDIENTS ---
 app.get('/api/ingredients', (req, res) => {
   fs.readFile(getFilePath('ingredients.json'), 'utf8', (err, data) => {
     if (err) return res.status(500).send('Erreur lecture ingrédients');
@@ -34,7 +45,7 @@ app.post('/api/ingredients', (req, res) => {
   });
 });
 
-// === API RECIPES ===
+// --- RECETTES ---
 app.get('/api/recipes', (req, res) => {
   fs.readFile(getFilePath('recipes.json'), 'utf8', (err, data) => {
     if (err) return res.status(500).send('Erreur lecture recettes');
@@ -49,7 +60,7 @@ app.post('/api/recipes', (req, res) => {
   });
 });
 
-// === API VOYAGES ===
+// --- VOYAGES ---
 app.get('/api/voyages', (req, res) => {
   fs.readFile(getFilePath('voyages.json'), 'utf8', (err, data) => {
     if (err) return res.status(500).send('Erreur lecture voyages');
@@ -64,35 +75,34 @@ app.post('/api/voyages', (req, res) => {
   });
 });
 
-// === API PUSH GIT ===
+// === GIT PUSH (manuel, via bouton) ===
 app.post('/api/git-push', (req, res) => {
   const { password } = req.body;
+
   if (password !== GIT_PASSWORD) {
     return res.status(401).send("Mot de passe incorrect.");
   }
 
   if (!GH_TOKEN) {
-    return res.status(500).send("GH_TOKEN non défini dans les variables d'environnement.");
+    return res.status(500).send("❌ GH_TOKEN non trouvé (fichier manquant ?)");
   }
 
   try {
-    // Configure Git en mémoire
     execSync(`git config user.email "autobot@example.com"`, { cwd: repoPath });
     execSync(`git config user.name "Render Backup Bot"`, { cwd: repoPath });
 
-    // Définit temporairement l'URL sécurisée pour origin
+    // Force l’URL sécurisée avec le token
     const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
     execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
 
-    // Push
-    const commitMessage = `Backup auto @ ${new Date().toISOString()}`;
+    // Commit si changement
     execSync(`git add .`, { cwd: repoPath });
-
     try {
       execSync(`git diff --cached --quiet`, { cwd: repoPath });
-      return res.send("✅ Aucun changement à pousser.");
+      return res.send("✅ Aucun changement à push");
     } catch {
-      execSync(`git commit -m ${JSON.stringify(commitMessage)}`, { cwd: repoPath });
+      const msg = `Backup auto @ ${new Date().toISOString()}`;
+      execSync(`git commit -m ${JSON.stringify(msg)}`, { cwd: repoPath });
       execSync(`git push origin ${branch}`, { cwd: repoPath });
       return res.send("✅ Push Git réussi !");
     }
@@ -105,5 +115,5 @@ app.post('/api/git-push', (req, res) => {
 
 // === START SERVER ===
 app.listen(PORT, () => {
-  console.log(`✅ Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`✅ Serveur lancé : http://localhost:${PORT}`);
 });
