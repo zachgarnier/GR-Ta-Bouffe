@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site du Randonneur</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.css" />
+
+</head>
+<body>
+  <header>
+    <h1>GR Ta Bouffe</h1>
+  </header>
+  <main>
+    <p>Ce site permet de planifier vos repas pour la randonnée en gérant les ingrédients, les recettes et les voyages associés.</p>
+
+    <div class="photos">
+      <img src="imgs/zacharie.jpg" alt="Zacharie">
+      <img src="imgs/mathis.jpg" alt="Mathis">
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <img src="imgs/ingredient.png" alt="Ingrédients">
+        <button class="btn" onclick="window.location.href='ingredient.html'">GR tes ingrédients</button>
+      </div>
+      <div class="card">
+        <img src="imgs/recette.png" alt="Recettes">
+        <button class="btn" onclick="window.location.href='recipe.html'">GR tes recettes</button>
+      </div>
+      <div class="card">
+        <img src="imgs/voyage.png" alt="Voyages">
+        <button class="btn" onclick="window.location.href='voyages.html'">GR tes voyages</button>
+      </div>
+    </div>
+
+    <section class="push-section">
+  <h2>🔒 Sauvegarder sur GitHub</h2>
+  <form id="gitForm">
+    <input type="password" id="gitPassword" placeholder="Mot de passe..." required />
+    <button type="submit">SaveOnGit</button>
+  </form>
+  <p id="gitStatus"></p>
+</section>
+  </main>
+
+  <script>
+document.getElementById('gitForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const password = document.getElementById('gitPassword').value;
+  const status = document.getElementById('gitStatus');
+  status.textContent = '⏳ Sauvegarde en cours...';
+
+  const res = await fetch('/api/git-push', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password })
+  });
+
+  if (res.ok) {
+    status.textContent = '✅ Sauvegarde réussie !';
+  } else {
+    const msg = await res.text();
+    status.textContent = `❌ ${msg}`;
+  }
+});
+</script>
+
+</body>
+</html>

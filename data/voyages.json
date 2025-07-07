@@ -1,0 +1,114 @@
+[
+  {
+    "titre": "Randonnée Alpes",
+    "description": "Un voyage de 2 jours en montagne avec Mathis",
+    "dateDepart": "2025-07-01",
+    "dateFin": "2025-07-02",
+    "jours": [
+      {
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentilles",
+            "multiplicateur": 2
+          },
+          {
+            "nom": "Curry Riz Lentilles",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 2
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Riz asiatique",
+            "multiplicateur": 3
+          },
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 2
+          },
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titre": "Pyrénée",
+    "description": "Été avec Mathis",
+    "dateDepart": "2025-07-10",
+    "dateFin": "2025-07-16",
+    "jours": [
+      {
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentilles",
+            "multiplicateur": 3
+          },
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentilles",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentilles",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Toast de chèvre miel au four",
+            "multiplicateur": 3
+          }
+        ]
+      },
+      {
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentilles",
+            "multiplicateur": 2
+          }
+        ]
+      }
+    ]
+  }
+]

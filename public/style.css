@@ -1,0 +1,27 @@
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid #dbe4db;
+  background-color: #f7f7f7;
+}
+
+.bottom-buttons button {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  background-color: #3f6d3f;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-buttons button:hover {
+  background-color: #2f5d2f;
+  transform: scale(1.05);
+}

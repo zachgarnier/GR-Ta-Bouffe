@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Détails du voyage</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="voyage_upd.css" />
+
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <input type="text" id="titreVoyage" placeholder="Titre du voyage" />
+    </h1>
+    <textarea id="descriptionVoyage" rows="3" placeholder="Description du voyage"></textarea>
+    <div class="date-row">
+    <label for="dateDepart">Départ
+        <input type="date" id="dateDepart" />
+    </label>
+    <label for="dateFin">Fin
+        <input type="date" id="dateFin" />
+    </label>
+    </div>
+
+
+    <h2>Journées</h2>
+
+
+    <div id="listeJournees"></div>
+
+    <div class="actions">
+      <button id="saveBtn">💾 Enregistrer</button>
+      <button id="deleteBtn" style="background-color: #f88; border-color: #f44;">🗑 Supprimer</button>
+    </div>
+  </div>
+
+  <script src="js/voyage_upd.js"></script>
+
+  <div class="bottom-buttons">
+    <button onclick="window.location.href='index.html'">Menu</button>
+    <button onclick="window.location.href='voyage_details.html?index=' + voyageIndex">Détails</button>
+    <button onclick="window.location.href='voyages.html'">Tous les voyages</button>
+  </div>
+
+</body>
+</html>

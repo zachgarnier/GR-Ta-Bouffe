@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 2rem;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3f6d3f;
+}
+
+.info {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Bloc pour chaque journée */
+.day {
+  background: #f9fdf9;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.day h3 {
+  margin-top: 0;
+  color: #2f5d2f;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+/* Ligne recette */
+.recipe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eef6ee;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin: 0.6rem 0;
+  transition: transform 0.2s ease;
+}
+
+.recipe:hover {
+  transform: scale(1.01);
+}
+
+.recipe-name {
+  font-weight: bold;
+  color: #2f5d2f;
+  font-size: 1rem;
+}
+
+.stats {
+  text-align: right;
+  font-size: 0.95rem;
+  color: #555;
+}

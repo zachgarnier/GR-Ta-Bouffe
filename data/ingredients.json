@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Riz",
+    "unit": "grammes",
+    "description": "Riz blanc long grain",
+    "gramsPerUnit": 1
+  },
+  {
+    "name": "Lentilles",
+    "unit": "grammes",
+    "description": "Lentilles vertes du puy",
+    "gramsPerUnit": 1
+  },
+  {
+    "name": "Pain de mis",
+    "unit": "tranches",
+    "description": "",
+    "gramsPerUnit": 30
+  },
+  {
+    "name": "Frommage de chèvre",
+    "unit": "grammes",
+    "description": "",
+    "gramsPerUnit": 1
+  },
+  {
+    "name": "Miel",
+    "unit": "cuillères",
+    "description": "",
+    "gramsPerUnit": 5
+  },
+  {
+    "name": "Sauce soja",
+    "unit": "ml",
+    "description": "sauce salé de préférence",
+    "gramsPerUnit": 1
+  },
+  {
+    "name": "chocolat",
+    "unit": "grammes",
+    "description": "",
+    "gramsPerUnit": 1
+  },
+  {
+    "name": "pate d'amande",
+    "unit": "grammes",
+    "description": "pour petit dej",
+    "gramsPerUnit": 1
+  },
+  {
+    "name": "gateau",
+    "unit": "grammes",
+    "description": "",
+    "gramsPerUnit": 1
+  }
+]

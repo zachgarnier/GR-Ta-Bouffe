@@ -1,0 +1,163 @@
+/* --- BASE --- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 2rem;
+}
+
+/* --- CONTAINER GÉNÉRAL --- */
+.container {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+/* --- TITRES --- */
+h1, h2 {
+  color: #3f6d3f;
+  margin-bottom: 1.5rem;
+}
+
+/* --- FORMULAIRES --- */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  width: 80%;
+  padding: 0.6rem;
+  margin: 0.4rem 0 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fefefe;
+  box-sizing: border-box;
+}
+
+/* --- DATES --- */
+.date-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.date-row label {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- JOURNÉES --- */
+.day {
+  border: 1px solid #d0d0d0;
+  background-color: #f9fdf9;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.day h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  color: #2f5d2f;
+}
+
+/* --- RECETTES --- */
+.recipe-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin: 0.4rem 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+}
+
+.recipe-line > div {
+  flex-grow: 1;
+}
+
+.recipe-line input[type="number"] {
+  width: 60px;
+  margin-left: 10px;
+}
+
+.recipe-line select,
+.recipe-line input {
+  padding: 0.4rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.recipe-line span {
+  min-width: 100px;
+}
+
+/* --- AJOUT DE RECETTE --- */
+.ajout-recette {
+  background-color: #eaf4ea;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- BOUTONS --- */
+button {
+  padding: 0.7rem 1.4rem;
+  font-size: 1rem;
+  background-color: #3f6d3f;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s ease;
+  font-weight: bold;
+  margin: 0.3rem;
+}
+
+button:hover {
+  background-color: #2f5d2f;
+  transform: scale(1.03);
+}
+
+/* --- ZONE ACTIONS --- */
+.actions {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.actions button {
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+
+/* --- DANGEROUS BUTTON (ex: supprimer) --- */
+button.danger {
+  background-color: #f44336;
+}
+
+button.danger:hover {
+  background-color: #d32f2f;
+}
