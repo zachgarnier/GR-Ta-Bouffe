@@ -93,7 +93,18 @@ app.post('/api/git-push', (req, res) => {
 
     // Force l’URL sécurisée avec le token
     const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
-    execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
+
+    try {
+      execSync(`git remote get-url origin`, { cwd: repoPath });
+      // Si la remote existe, on la met à jour
+      execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
+      console.log("✅ Remote origin mise à jour");
+    } catch {
+      // Si la remote n'existe pas, on la crée
+      execSync(`git remote add origin "${remoteUrl}"`, { cwd: repoPath });
+      console.log("✅ Remote origin ajoutée");
+    }
+
 
     // Commit si changement
     execSync(`git add .`, { cwd: repoPath });
