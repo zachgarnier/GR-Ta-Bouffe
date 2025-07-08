@@ -35,7 +35,7 @@
     </div>
 
     <section class="push-section">
-  <h2>🔒 Sauvegarder sur GitHub</h2>
+  <h2>Sauvegarder sur GitHub</h2>
   <form id="gitForm">
     <input type="password" id="gitPassword" placeholder="Mot de passe..." required />
     <button type="submit">SaveOnGit</button>
@@ -45,26 +45,43 @@
   </main>
 
   <script>
+function showToast(message, isSuccess = true) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.style.backgroundColor = isSuccess ? '#4CAF50' : '#f44336'; // vert ou rouge
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000); // disparaît après 3 secondes
+}
+
 document.getElementById('gitForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const password = document.getElementById('gitPassword').value;
-  const status = document.getElementById('gitStatus');
-  status.textContent = '⏳ Sauvegarde en cours...';
 
-  const res = await fetch('/api/git-push', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ password })
-  });
+  showToast('⏳ Sauvegarde en cours...', true);
 
-  if (res.ok) {
-    status.textContent = '✅ Sauvegarde réussie !';
-  } else {
-    const msg = await res.text();
-    status.textContent = `❌ ${msg}`;
+  try {
+    const res = await fetch('/api/git-push', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    });
+
+    if (res.ok) {
+      showToast('✅ Sauvegarde réussie !', true);
+    } else {
+      const msg = await res.text();
+      showToast(`❌ ${msg}`, false);
+    }
+  } catch (err) {
+    showToast('❌ Erreur de connexion au serveur.', false);
   }
 });
 </script>
 
+
+<div id="toast" class="toast"></div>
 </body>
 </html>
