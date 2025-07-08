@@ -1,5 +1,6 @@
 const { execSync } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
 module.exports = function pushToGithub(GH_TOKEN, callback) {
   const repoPath = path.resolve(__dirname, '..');
@@ -8,11 +9,18 @@ module.exports = function pushToGithub(GH_TOKEN, callback) {
   const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
 
   try {
-    // Configuration de l'auteur Git
+    // 📦 Initialise le repo Git si nécessaire
+    const gitDir = path.join(repoPath, '.git');
+    if (!fs.existsSync(gitDir)) {
+      console.log("📦 Initialisation du dépôt Git");
+      execSync('git init', { cwd: repoPath });
+    }
+
+    // 🧑‍💼 Configuration de l'auteur Git
     execSync(`git config user.email "autobot@example.com"`, { cwd: repoPath });
     execSync(`git config user.name "Render Backup Bot"`, { cwd: repoPath });
 
-    // Si 'origin' n'existe pas, on l'ajoute
+    // 🔗 Ajout du remote si absent
     try {
       execSync('git remote get-url origin', { cwd: repoPath });
     } catch {
@@ -20,23 +28,24 @@ module.exports = function pushToGithub(GH_TOKEN, callback) {
       console.log('✅ Remote origin ajoutée');
     }
 
-    // On met à jour l'URL d'origine à chaque appel pour être sûr
+    // 🔄 Mise à jour de l’URL du remote (toujours)
     execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
 
-    // On ajoute tous les fichiers
+    // 🧠 Forcer la branche main (même détaché)
+    execSync(`git checkout -B ${branch}`, { cwd: repoPath });
+
+    // 📥 Ajout des fichiers
     execSync('git add .', { cwd: repoPath });
 
-    // Vérifie s’il y a des changements à commit
+    // ✅ Commit (vide si aucun changement détecté)
     try {
-      execSync('git diff --cached --quiet', { cwd: repoPath });
-      // Aucun changement => commit vide forcé (optionnel)
+      execSync('git diff --cached --quiet', { cwd: repoPath }); // retourne 1 si modif
       execSync(`git commit --allow-empty -m ${JSON.stringify(message)}`, { cwd: repoPath });
     } catch {
-      // Changement détecté => commit normal
       execSync(`git commit -m ${JSON.stringify(message)}`, { cwd: repoPath });
     }
 
-    // Push forcé (⚠️ uniquement si tu veux forcer la réécriture)
+    // 🚀 Push vers GitHub
     execSync(`git push --force origin ${branch}`, { cwd: repoPath });
 
     callback(null, '✅ Push Git réussi !');
