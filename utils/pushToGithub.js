@@ -1,45 +1,46 @@
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 const path = require('path');
-const fs = require('fs');
 
-const repoPath = path.resolve(__dirname, '..');
-const message = '✅ Auto-push depuis Render';
+module.exports = function pushToGithub(GH_TOKEN, callback) {
+  const repoPath = path.resolve(__dirname, '..');
+  const branch = 'main';
+  const message = `Backup auto @ ${new Date().toISOString()}`;
+  const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
 
-function pushToGithub(token, callback) {
-  const remoteUrl = `https://${token}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
+  try {
+    // Configuration de l'auteur Git
+    execSync(`git config user.email "autobot@example.com"`, { cwd: repoPath });
+    execSync(`git config user.name "Render Backup Bot"`, { cwd: repoPath });
 
-  // S'assurer que le repo est bien initialisé
-  if (!fs.existsSync(path.join(repoPath, '.git'))) {
+    // Si 'origin' n'existe pas, on l'ajoute
     try {
-      execSync('git init', { cwd: repoPath });
+      execSync('git remote get-url origin', { cwd: repoPath });
+    } catch {
       execSync(`git remote add origin "${remoteUrl}"`, { cwd: repoPath });
-    } catch (e) {
-      return callback(e);
+      console.log('✅ Remote origin ajoutée');
     }
-  } else {
+
+    // On met à jour l'URL d'origine à chaque appel pour être sûr
+    execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
+
+    // On ajoute tous les fichiers
+    execSync('git add .', { cwd: repoPath });
+
+    // Vérifie s’il y a des changements à commit
     try {
-      execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
-    } catch (e) {
-      return callback(e);
+      execSync('git diff --cached --quiet', { cwd: repoPath });
+      // Aucun changement => commit vide forcé (optionnel)
+      execSync(`git commit --allow-empty -m ${JSON.stringify(message)}`, { cwd: repoPath });
+    } catch {
+      // Changement détecté => commit normal
+      execSync(`git commit -m ${JSON.stringify(message)}`, { cwd: repoPath });
     }
+
+    // Push forcé (⚠️ uniquement si tu veux forcer la réécriture)
+    execSync(`git push --force origin ${branch}`, { cwd: repoPath });
+
+    callback(null, '✅ Push Git réussi !');
+  } catch (err) {
+    callback(err, err.stderr?.toString() || err.message || err);
   }
-
-  // Commande complète pour forcer la branche + push
-  const gitCommand = `
-    git checkout -B main &&
-    git add data/*.json &&
-    git diff --cached --quiet || git commit -m ${JSON.stringify(message)} &&
-    git push origin main
-  `;
-
-  exec(gitCommand, { cwd: repoPath }, (err, stdout, stderr) => {
-    if (err) {
-      console.error("❌ Erreur backup GitHub :", stderr.trim());
-      return callback(new Error(stderr.trim()));
-    }
-    console.log("✅ Données poussées sur GitHub :", stdout.trim());
-    callback(null, '✅ Push réussi');
-  });
-}
-
-module.exports = pushToGithub;
+};
