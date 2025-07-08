@@ -3,6 +3,8 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const bodyParser = require('body-parser');
+const pushToGithub = require('./utils/pushToGithub');
 
 // === INIT ===
 const app = express();
@@ -13,7 +15,7 @@ const repoPath = __dirname;
 const branch = 'main';
 
 // === LECTURE DU TOKEN GITHUB ===
-let GH_TOKEN = "";
+let GH_TOKEN = null;
 try {
   GH_TOKEN = fs.readFileSync(GH_TOKEN_PATH, 'utf8').trim();
   console.log("✅ Token GitHub lu depuis le fichier secret");
@@ -87,42 +89,15 @@ app.post('/api/git-push', (req, res) => {
     return res.status(500).send("❌ GH_TOKEN non trouvé (fichier manquant ?)");
   }
 
-  try {
-    execSync(`git config user.email "autobot@example.com"`, { cwd: repoPath });
-    execSync(`git config user.name "Render Backup Bot"`, { cwd: repoPath });
-
-    // Force l’URL sécurisée avec le token
-    const remoteUrl = `https://${GH_TOKEN}@github.com/zachgarnier/GR-Ta-Bouffe.git`;
-
-    try {
-      execSync(`git remote get-url origin`, { cwd: repoPath });
-      // Si la remote existe, on la met à jour
-      execSync(`git remote set-url origin "${remoteUrl}"`, { cwd: repoPath });
-      console.log("✅ Remote origin mise à jour");
-    } catch {
-      // Si la remote n'existe pas, on la crée
-      execSync(`git remote add origin "${remoteUrl}"`, { cwd: repoPath });
-      console.log("✅ Remote origin ajoutée");
+  pushToGithub(GH_TOKEN, (err, message) => {
+    if (err) {
+      console.error("❌ Erreur lors du push :", err);
+      return res.status(500).send("Erreur lors du push Git.");
     }
-
-
-    // Commit si changement
-    execSync(`git add .`, { cwd: repoPath });
-    try {
-      execSync(`git diff --cached --quiet`, { cwd: repoPath });
-      return res.send("✅ Aucun changement à push");
-    } catch {
-      const msg = `Backup auto @ ${new Date().toISOString()}`;
-      execSync(`git commit -m ${JSON.stringify(msg)}`, { cwd: repoPath });
-      execSync(`git push origin ${branch}`, { cwd: repoPath });
-      return res.send("✅ Push Git réussi !");
-    }
-
-  } catch (err) {
-    console.error("❌ Git Push Error:", err.message);
-    return res.status(500).send("Erreur lors du push Git : " + err.message);
-  }
+    res.send(message);
+  });
 });
+
 
 // === START SERVER ===
 app.listen(PORT, () => {
