@@ -91,11 +91,12 @@ app.post('/api/git-push', (req, res) => {
 
   pushToGithub(GH_TOKEN, (err, message) => {
     if (err) {
-      console.error("❌ Erreur lors du push :", err);
+      console.error("❌ Erreur lors du push :", err.stderr?.toString() || err.message || err);
       return res.status(500).send("Erreur lors du push Git.");
     }
     res.send(message);
   });
+
 });
 
 
