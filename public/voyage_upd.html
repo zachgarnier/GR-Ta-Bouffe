@@ -22,6 +22,37 @@
     </label>
     </div>
 
+    <div class="extras-options">
+      <label>
+        <input type="checkbox" id="useBars" />
+        <span id="barsLabel">Barres</span>:
+        <input type="number" id="barsInput" min="0" value="0" style="width: 60px" />
+        <span id="barDetailsSpan" style="display: none;">
+          — Poids d'une barre (g) :
+          <input type="number" id="barWeightInput" min="1" value="30" style="width: 80px;" />
+          Kcal par barre :
+          <input type="number" id="barKcalInput" min="1" value="100" style="width: 80px;" />
+        </span>
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" id="useSnacks" />
+        <span id="snacksLabel">Snacks</span>:
+        <input type="number" id="snacksInput" min="0" value="0" style="width: 100px" />
+        <span id="snackKcalSpan" style="display: none;">
+          Kcal pour 100g de snacks :
+          <input type="number" id="snackKcalInput" min="1" value="400" style="width: 80px;" />
+        </span>
+      </label>
+    </div>
+
+
+    <div class="commentaires-section">
+      <h3>Commentaires après voyage</h3>
+      <textarea id="commentairesVoyage" rows="3" placeholder="Ajoutez ici vos remarques après la randonnée..."></textarea>
+    </div>
+
+
 
     <h2>Journées</h2>
 
@@ -29,8 +60,8 @@
     <div id="listeJournees"></div>
 
     <div class="actions">
-      <button id="saveBtn">💾 Enregistrer</button>
-      <button id="deleteBtn" style="background-color: #f88; border-color: #f44;">🗑 Supprimer</button>
+      <button id="saveBtn">Enregistrer</button>
+      <button id="deleteBtn" style="background-color: #f88; border-color: #f44;">Supprimer</button>
     </div>
   </div>
 

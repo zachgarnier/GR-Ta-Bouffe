@@ -72,3 +72,36 @@ h1, h2, h3 {
   font-size: 0.95rem;
   color: #555;
 }
+
+.day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .day-title {
+      font-weight: bold;
+    }
+    .day-stats {
+      text-align: right;
+      font-size: 0.9em;
+    }
+    .day-extras {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85em;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .recipe {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .recipe-name {
+      flex-grow: 1;
+    }
+    .recipe-stats {
+      color: #666;
+    }

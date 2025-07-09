@@ -7,13 +7,17 @@
   <link rel="stylesheet" href="voyage_details.css" />
 </head>
 <body>
+  <!-- Le reste du code HTML reste inchangé -->
   <div class="container">
     <!-- En-tête info -->
     <div class="info">
       <h2 id="titre"></h2>
       <p id="description"></p>
-      <p><strong>Départ :</strong> <span id="dateDepart"></span> —
-         <strong>Fin :</strong> <span id="dateFin"></span></p>
+      <p>
+        <strong>Départ :</strong> <span id="dateDepart"></span> —
+        <strong>Fin :</strong> <span id="dateFin"></span>
+      </p>
+      <p id="commentaires" class="info-comment"></p> <!-- Nouvel élément pour les commentaires -->
     </div>
 
     <!-- Journées -->
@@ -23,7 +27,7 @@
     <h2>Liste de courses</h2>
     <div id="listeCourses" style="background: #fff; border: 1px solid #ccc; padding: 1rem; border-radius: 6px;"></div>
     <div style="text-align: center; margin-top: 1rem;">
-      <button onclick="telechargerListeCourses()">📥 Télécharger la liste de course</button>
+      <button onclick="telechargerListeCourses()">Télécharger la liste de course</button>
     </div>
 
     <!-- Boutons bas de page -->
@@ -33,175 +37,6 @@
       <button onclick="window.location.href='voyages.html'">Tous les voyages</button>
     </div>
   </div>
-
-<script>
-
-  let currentIndex = null;
-
-  const API_VOYAGES = '/api/voyages';
-  const API_RECIPES = '/api/recipes';
-  const API_INGREDIENTS = '/api/ingredients'; // ⬅️ important
-
-  let allRecipes = [];
-  let currentVoyage = null;
-
-  async function main() {
-    const params = new URLSearchParams(window.location.search);
-    const index = parseInt(params.get('index'));
-
-    currentIndex = index;
-
-    const [voyages, recettes, ingredients] = await Promise.all([
-      fetch(API_VOYAGES).then(res => res.json()),
-      fetch(API_RECIPES).then(res => res.json()),
-      fetch(API_INGREDIENTS).then(res => res.json()) // ⬅️ important
-    ]);
-
-    allRecipes = recettes;
-    allIngredients = ingredients;
-    currentVoyage = voyages[index];
-
-    if (!currentVoyage) {
-      document.body.innerHTML = "<p>Voyage introuvable.</p>";
-      return;
-    }
-
-    document.getElementById('titre').textContent = currentVoyage.titre || '';
-    document.getElementById('description').textContent = currentVoyage.description || '';
-    document.getElementById('dateDepart').textContent = currentVoyage.dateDepart || '';
-    document.getElementById('dateFin').textContent = currentVoyage.dateFin || '';
-
-    afficherJours(currentVoyage.jours || []);
-    afficherListeCourses(currentVoyage.jours || []);
-  }
-
-  function afficherJours(jours) {
-    const container = document.getElementById('journees');
-    container.innerHTML = '';
-
-    jours.forEach((jour, index) => {
-      const div = document.createElement('div');
-      div.classList.add('day');
-
-      const titre = document.createElement('h3');
-      titre.textContent = `Jour ${index + 1}`;
-      div.appendChild(titre);
-
-      jour.recettes.forEach(recette => {
-        const recetteRef = allRecipes.find(r => r.name === recette.nom);
-        const multiplicateur = recette.multiplicateur || 1;
-
-        const nbPersonnes = recetteRef ? recetteRef.nbPeople * multiplicateur : '?';
-        const poidsTotal = recetteRef ? recetteRef.totalWeight * multiplicateur : '?';
-
-        const recDiv = document.createElement('div');
-        recDiv.classList.add('recipe');
-
-        const nameDiv = document.createElement('div');
-        nameDiv.classList.add('recipe-name');
-        nameDiv.textContent = `${recette.nom} ${multiplicateur > 1 ? `(${multiplicateur})` : ''}`;
-
-        const statsDiv = document.createElement('div');
-        statsDiv.classList.add('stats');
-        statsDiv.innerHTML = `
-          ${nbPersonnes} pers — ${poidsTotal} g
-        `;
-
-        recDiv.appendChild(nameDiv);
-        recDiv.appendChild(statsDiv);
-        div.appendChild(recDiv);
-      });
-
-      container.appendChild(div);
-    });
-  }
-
-  function afficherListeCourses(jours) {
-    const ingredientsMap = new Map();
-
-    jours.forEach(jour => {
-      jour.recettes.forEach(recette => {
-        const recetteRef = allRecipes.find(r => r.name === recette.nom);
-        const mult = recette.multiplicateur || 1;
-
-        if (!recetteRef || !Array.isArray(recetteRef.ingredients)) return;
-
-        recetteRef.ingredients.forEach(ingredient => {
-          const nom = ingredient.name;  
-          const quantite = ingredient.quantity * mult;  
-
-          if (ingredientsMap.has(nom)) {
-            ingredientsMap.set(nom, ingredientsMap.get(nom) + quantite);
-          } else {
-            ingredientsMap.set(nom, quantite);
-          }
-        });
-      });
-    });
-
-    // Affichage
-    const container = document.getElementById('listeCourses');
-    container.innerHTML = '';
-
-    const ul = document.createElement('ul');
-    ingredientsMap.forEach((quantite, nom) => {
-      const ingrRef = allIngredients.find(i => i.name === nom);
-      const unit = ingrRef?.unit || 'g';
-
-      const li = document.createElement('li');
-      li.textContent = `${nom}: ${quantite} ${unit}`;
-      ul.appendChild(li);
-    });
-
-    container.appendChild(ul);
-  }
-
-
-  function telechargerListeCourses() {
-    const ingredientsMap = new Map();
-
-    currentVoyage.jours.forEach(jour => {
-      jour.recettes.forEach(recette => {
-        const recetteRef = allRecipes.find(r => r.name === recette.nom);
-        const mult = recette.multiplicateur || 1;
-
-        if (!recetteRef || !recetteRef.ingredients) return;
-
-        recetteRef.ingredients.forEach(ingredient => {
-          const nom = ingredient.name;
-          const quantite = ingredient.quantity * mult;
-
-          if (ingredientsMap.has(nom)) {
-            ingredientsMap.set(nom, ingredientsMap.get(nom) + quantite);
-          } else {
-            ingredientsMap.set(nom, quantite);
-          }
-        });
-      });
-    });
-
-    let contenu = `🧺 Liste de courses — ${currentVoyage.titre}\n\n`;
-    ingredientsMap.forEach((quantite, nom) => {
-      const ingrRef = allIngredients.find(i => i.name === nom);
-      const unit = ingrRef?.unit || 'g';
-      contenu += `- ${nom}: ${quantite} ${unit}\n`;
-    });
-
-    const blob = new Blob([contenu], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-
-    const lien = document.createElement('a');
-    lien.href = url;
-    lien.download = `liste_courses_${currentVoyage.titre.replace(/\s+/g, '_')}.txt`;
-    document.body.appendChild(lien);
-    lien.click();
-    document.body.removeChild(lien);
-    URL.revokeObjectURL(url);
-  }
-
-  document.addEventListener('DOMContentLoaded', main);
-</script>
-
-
+<script src="js/voyage_details.js"></script>
 </body>
 </html>

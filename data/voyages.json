@@ -1,114 +1,119 @@
 [
   {
-    "titre": "Randonnée Alpes",
-    "description": "Un voyage de 2 jours en montagne avec Mathis",
-    "dateDepart": "2025-07-01",
-    "dateFin": "2025-07-02",
-    "jours": [
-      {
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentilles",
-            "multiplicateur": 2
-          },
-          {
-            "nom": "Curry Riz Lentilles",
-            "multiplicateur": 1
-          },
-          {
-            "nom": "Toast de chèvre miel au four",
-            "multiplicateur": 2
-          }
-        ]
-      },
-      {
-        "recettes": [
-          {
-            "nom": "Riz asiatique",
-            "multiplicateur": 3
-          },
-          {
-            "nom": "Toast de chèvre miel au four",
-            "multiplicateur": 2
-          },
-          {
-            "nom": "Toast de chèvre miel au four",
-            "multiplicateur": 1
-          }
-        ]
-      }
-    ]
-  },
-  {
     "titre": "Pyrénée",
     "description": "Été avec Mathis",
     "dateDepart": "2025-07-10",
     "dateFin": "2025-07-16",
+    "commentaires": "Les tomates séchées ont fait moisir la purée. Attention à la date de péremption !",
+    "barresParPersonneParJour": 2,
+    "grammeParBarre": 30,
+    "snacksParPersonneParJour": 100,
     "jours": [
       {
+        "nbPersonnes": 3,
         "recettes": [
           {
-            "nom": "Curry Riz Lentilles",
-            "multiplicateur": 3
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 4
           },
           {
-            "nom": "Toast de chèvre miel au four",
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 2
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 3,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
             "multiplicateur": 1
           }
         ]
       },
       {
+        "nbPersonnes": 3,
         "recettes": [
           {
-            "nom": "Curry Riz Lentilles",
+            "nom": "Curry Riz Lentille",
             "multiplicateur": 1
           }
         ]
       },
       {
+        "nbPersonnes": 3,
         "recettes": [
           {
-            "nom": "Toast de chèvre miel au four",
-            "multiplicateur": 1
-          }
-        ]
-      },
-      {
-        "recettes": [
-          {
-            "nom": "Toast de chèvre miel au four",
-            "multiplicateur": 1
-          }
-        ]
-      },
-      {
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentilles",
-            "multiplicateur": 1
-          },
-          {
-            "nom": "Toast de chèvre miel au four",
-            "multiplicateur": 1
-          }
-        ]
-      },
-      {
-        "recettes": [
-          {
-            "nom": "Toast de chèvre miel au four",
+            "nom": "Curry Riz Lentille",
             "multiplicateur": 3
           }
         ]
       },
       {
+        "nbPersonnes": 2,
         "recettes": [
           {
-            "nom": "Curry Riz Lentilles",
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 7
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
             "multiplicateur": 2
           }
         ]
       }
-    ]
+    ],
+    "kcalParBarre": 100,
+    "kcalParSnacks": 400
+  },
+  {
+    "titre": "Test",
+    "description": "",
+    "dateDepart": "2025-07-09",
+    "dateFin": "2025-07-10",
+    "jours": [
+      {
+        "nbPersonnes": 3,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 3
+          },
+          {
+            "nom": "gouter",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 3,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 3
+          }
+        ]
+      }
+    ],
+    "commentaires": "C'est dommage pour les recettes sans légumineuses",
+    "barresParPersonneParJour": 2,
+    "grammeParBarre": 30,
+    "kcalParBarre": 100,
+    "snacksParPersonneParJour": 100,
+    "kcalParSnacks": 400
   }
 ]

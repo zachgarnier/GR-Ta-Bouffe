@@ -17,6 +17,7 @@ async function fetchRecipes() {
   return await res.json();
 }
 
+
 async function saveRecipes(recipes) {
   const res = await fetch(API_REC, {
     method: 'POST',
@@ -24,6 +25,34 @@ async function saveRecipes(recipes) {
     body: JSON.stringify(recipes)
   });
   if (!res.ok) alert("Erreur lors de l'enregistrement.");
+}
+
+async function updateTripsWithRenamedRecipe(oldName, newName) {
+  const trips = await fetchVoyages();
+  let tripsUpdated = false;
+
+  for (const trip of trips) {
+    if (!trip.jours) continue;
+
+    for (const day of trip.jours) {
+      if (!day.recettes) continue;
+
+      for (const recipe of day.recettes) {
+        if (recipe.nom === oldName) {
+          recipe.nom = newName;
+          tripsUpdated = true;
+        }
+      }
+    }
+  }
+
+  if (tripsUpdated) {
+    await fetch(API_VOYAGES, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(trips)
+    });
+  }
 }
 
 function createIngredientLine(filteredIngredients, ingredient = {}, ingredientLines = []) {
@@ -72,6 +101,9 @@ function createIngredientLine(filteredIngredients, ingredient = {}, ingredientLi
 }
 
 
+
+
+
 function createRecipeRow(recipe = {}, recipes, index = null, allIngredients = []) {
   const tr = document.createElement('tr');
 
@@ -85,27 +117,70 @@ function createRecipeRow(recipe = {}, recipes, index = null, allIngredients = []
   const ingredientsDiv = document.createElement('div');
   const ingredientLines = [];
 
-  const nbPeopleInput = document.createElement('input');
-  nbPeopleInput.type = 'number';
-  nbPeopleInput.min = 1;
-  nbPeopleInput.value = recipe.nbPeople || 1;
+  const KcalDisplay = document.createElement('span');
+  KcalDisplay.textContent = '...';
 
   const weightDisplay = document.createElement('span');
   weightDisplay.textContent = '...';
+
+  // Ajoutez cette fonction pour mettre à jour les sélecteurs d'ingrédients
+  function updateIngredientSelectors(newIngredients) {
+    ingredientLines.forEach(entry => {
+      const select = entry.line.querySelector('select');
+      const currentValue = select.value;
+      
+      // Recréer les options
+      select.innerHTML = '';
+      newIngredients.forEach(ing => {
+        const opt = document.createElement('option');
+        opt.value = ing.name;
+        opt.textContent = `${ing.name} (${ing.unit})`;
+        if (ing.name === currentValue) opt.selected = true;
+        select.appendChild(opt);
+      });
+    });
+  }
+
+  // Ecouteur pour les changements de quantité
+  ingredientsDiv.addEventListener('input', (e) => {
+    if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
+      updateWeight();
+      updateKcal();
+    }
+  });
 
   function computeTotalWeight() {
   let total = 0;
   for (const ing of ingredientLines) {
     const { name, quantity } = ing.getData();
     const matched = allIngredients.find(i => i.name === name);
-    if (!matched || !matched.gramsPerUnit) return 'NaN';
+    if (!matched || matched.gramsPerUnit === "") return NaN;
     total += quantity * matched.gramsPerUnit;
   }
-  return Math.round(total);
+  return total;
+  
+  
 }
 
 function updateWeight() {
-  weightDisplay.textContent = computeTotalWeight();
+  const weight = computeTotalWeight();
+  weightDisplay.textContent = isNaN(weight) ? 'NaN' : Math.round(weight);
+}
+
+function computeTotalKcal() {
+  let total = 0;
+  for (const ing of ingredientLines) {
+    const { name, quantity } = ing.getData();
+    const matched = allIngredients.find(i => i.name === name);
+    if (!matched || matched.gramsPerUnit === "" || matched.Kcal === "") return NaN;
+    total += quantity * matched.gramsPerUnit * (matched.Kcal / 100);
+  }
+  return total;
+}
+
+function updateKcal() {
+  const kcal = computeTotalKcal();
+  KcalDisplay.textContent = isNaN(kcal) ? 'NaN' : Math.round(kcal);
 }
 
 (recipe.ingredients || []).forEach(i => {
@@ -141,7 +216,7 @@ ingredientsDiv.appendChild(addBtn);
   const tdName = document.createElement('td');
   const tdIngs = document.createElement('td');
   const tdDesc = document.createElement('td');
-  const tdPeople = document.createElement('td');
+  const tdKcal = document.createElement('td');
   const tdWeight = document.createElement('td');
   const tdSave = document.createElement('td');
   const tdDelete = document.createElement('td');
@@ -149,7 +224,7 @@ ingredientsDiv.appendChild(addBtn);
   tdName.appendChild(nameInput);
   tdIngs.appendChild(ingredientsDiv);
   tdDesc.appendChild(descInput);
-  tdPeople.appendChild(nbPeopleInput);
+  tdKcal.appendChild(KcalDisplay);
   tdWeight.appendChild(weightDisplay);
 
   const saveBtn = document.createElement('button');
@@ -159,15 +234,15 @@ ingredientsDiv.appendChild(addBtn);
   saveBtn.onclick = async () => {
     const name = nameInput.value.trim();
     const description = descInput.value.trim();
-    const nbPeople = parseInt(nbPeopleInput.value) || 1;
+    const totalKcal = computeTotalKcal();
     const totalWeight = computeTotalWeight();
     
-
     if (!name) return alert("Le nom est obligatoire.");
 
     const ingredients = ingredientLines.map(entry => entry.getData()).filter(i => i.name && i.quantity > 0);
 
     const existingIndex = recipes.findIndex(r => r.name === name);
+    const oldName = index !== null ? recipes[index].name : null;
 
     if (index === null && existingIndex !== -1) {
       return alert("Une recette avec ce nom existe déjà.");
@@ -177,13 +252,17 @@ ingredientsDiv.appendChild(addBtn);
       name,
       description,
       ingredients,
-      nbPeople,
+      totalKcal,
       totalWeight
     };
 
     if (index === null) {
       recipes.push(newRecipe);
     } else {
+      // Si le nom a changé
+      if (oldName && oldName !== name) {
+        await updateTripsWithRenamedRecipe(oldName, name);
+      }
       recipes[index] = newRecipe;
     }
 
@@ -234,12 +313,13 @@ ingredientsDiv.appendChild(addBtn);
   tr.appendChild(tdName);
   tr.appendChild(tdIngs);
   tr.appendChild(tdDesc);
-  tr.appendChild(tdPeople);
   tr.appendChild(tdWeight);
+  tr.appendChild(tdKcal);
   tr.appendChild(tdSave);
   tr.appendChild(tdDelete);
 
   updateWeight();
+  updateKcal();
   return tr;
 }
 
@@ -259,6 +339,35 @@ async function renderTable() {
 
   const emptyRow = createRecipeRow({}, recipes, null, allIngredients);
   tbody.appendChild(emptyRow);
+}
+
+function recalculateRecipeTotals(recipe, allIngredients) {
+  let totalWeight = 0;
+  let totalKcal = 0;
+  let hasValidData = true;
+
+  if (!recipe.ingredients) {
+    return { totalWeight: NaN, totalKcal: NaN };
+  }
+
+  for (const ing of recipe.ingredients) {
+    const ingName = typeof ing === 'string' ? ing : ing.name;
+    const quantity = typeof ing === 'string' ? 1 : (ing.quantity || 0);
+    
+    const ingredient = allIngredients.find(i => i.name === ingName);
+    if (!ingredient || !ingredient.gramsPerUnit || !ingredient.Kcal) {
+      hasValidData = false;
+      continue;
+    }
+
+    totalWeight += quantity * ingredient.gramsPerUnit;
+    totalKcal += quantity * ingredient.gramsPerUnit * (ingredient.Kcal / 100);
+  }
+
+  return {
+    totalWeight: hasValidData ? Math.round(totalWeight) : NaN,
+    totalKcal: hasValidData ? Math.round(totalKcal) : NaN
+  };
 }
 
 document.addEventListener('DOMContentLoaded', renderTable);

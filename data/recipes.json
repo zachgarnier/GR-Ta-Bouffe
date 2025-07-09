@@ -1,58 +1,38 @@
 [
   {
-    "name": "Curry Riz Lentilles",
+    "name": "Curry Riz Lentille",
     "description": "Un plat chaud et réconfortant",
     "ingredients": [
       {
         "name": "Riz",
-        "quantity": 300
+        "quantity": 1000
       },
       {
-        "name": "Lentilles",
-        "quantity": 50
-      },
-      {
-        "name": "chocolat",
-        "quantity": 10
-      }
-    ],
-    "nbPeople": 1,
-    "totalWeight": 360
-  },
-  {
-    "name": "Toast de chèvre miel au four",
-    "description": "Plat pour une personne",
-    "ingredients": [
-      {
-        "name": "Pain de mis",
-        "quantity": 4
-      },
-      {
-        "name": "Miel",
-        "quantity": 2
-      },
-      {
-        "name": "Frommage de chèvre",
-        "quantity": 300
-      }
-    ],
-    "nbPeople": 3,
-    "totalWeight": 430
-  },
-  {
-    "name": "gouter",
-    "description": "gouté eva a faim",
-    "ingredients": [
-      {
-        "name": "pate d'amande",
+        "name": "Nouilles",
         "quantity": 20
       },
       {
-        "name": "Pain de mis",
-        "quantity": 4
+        "name": "Riz",
+        "quantity": 20
       }
     ],
-    "nbPeople": 1,
-    "totalWeight": 140
+    "totalKcal": 39806,
+    "totalWeight": 30620
+  },
+  {
+    "name": "gouter",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "pain",
+        "quantity": 40
+      },
+      {
+        "name": "chocolat",
+        "quantity": 1
+      }
+    ],
+    "totalKcal": 610,
+    "totalWeight": 1300
   }
 ]
