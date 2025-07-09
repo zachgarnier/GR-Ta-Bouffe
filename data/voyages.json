@@ -1,9 +1,9 @@
 [
   {
-    "titre": "Pyrénée",
-    "description": "Été avec Mathis",
-    "dateDepart": "2025-07-10",
-    "dateFin": "2025-07-16",
+    "titre": "GR10 dans les Pyrénées",
+    "description": "Été 2025 avec Solal et l'équipe de Compiègne.",
+    "dateDepart": "2024-07-10",
+    "dateFin": "2024-07-21",
     "commentaires": "Les tomates séchées ont fait moisir la purée. Attention à la date de péremption !",
     "barresParPersonneParJour": 2,
     "grammeParBarre": 30,
@@ -75,19 +75,39 @@
             "multiplicateur": 2
           }
         ]
+      },
+      {
+        "nbPersonnes": 1,
+        "recettes": []
+      },
+      {
+        "nbPersonnes": 1,
+        "recettes": []
+      },
+      {
+        "nbPersonnes": 1,
+        "recettes": []
+      },
+      {
+        "nbPersonnes": 1,
+        "recettes": []
+      },
+      {
+        "nbPersonnes": 1,
+        "recettes": []
       }
     ],
     "kcalParBarre": 100,
     "kcalParSnacks": 400
   },
   {
-    "titre": "Test",
-    "description": "",
-    "dateDepart": "2025-07-09",
-    "dateFin": "2025-07-10",
+    "titre": "Tour du mont Blanc",
+    "description": "Pourquoi pas faire une petite balade ensemble pour se rappeler le GR10.",
+    "dateDepart": "2026-08-03",
+    "dateFin": "2026-08-09",
     "jours": [
       {
-        "nbPersonnes": 3,
+        "nbPersonnes": 4,
         "recettes": [
           {
             "nom": "Curry Riz Lentille",
@@ -100,16 +120,61 @@
         ]
       },
       {
-        "nbPersonnes": 3,
+        "nbPersonnes": 4,
         "recettes": [
           {
             "nom": "Curry Riz Lentille",
             "multiplicateur": 3
           }
         ]
+      },
+      {
+        "nbPersonnes": 4,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 4,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 4,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 4,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 1
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 4,
+        "recettes": [
+          {
+            "nom": "Curry Riz Lentille",
+            "multiplicateur": 1
+          }
+        ]
       }
     ],
-    "commentaires": "C'est dommage pour les recettes sans légumineuses",
+    "commentaires": "Je te propose le Tour du mont blanc en août prochain. Pour l'instant on peut être 4 : Mathis, Ambre, Eva, Zacharie. (Tout le monde peut se rajouter en écrivant son nom, et ajoutant des portions de nourriture)",
     "barresParPersonneParJour": 2,
     "grammeParBarre": 30,
     "kcalParBarre": 100,

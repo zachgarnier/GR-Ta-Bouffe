@@ -5,7 +5,10 @@
     "ingredients": [
       {
         "name": "Riz",
-        "quantity": 1000
+        "quantity": 200,
+        "unit": "grammes",
+        "gramsPerUnit": "1",
+        "Kcal": "130"
       },
       {
         "name": "Nouilles",
@@ -13,11 +16,14 @@
       },
       {
         "name": "Riz",
-        "quantity": 20
+        "quantity": 20,
+        "unit": "grammes",
+        "gramsPerUnit": "1",
+        "Kcal": "130"
       }
     ],
-    "totalKcal": 39806,
-    "totalWeight": 30620
+    "totalKcal": 312,
+    "totalWeight": 240
   },
   {
     "name": "gouter",
