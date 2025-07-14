@@ -1,0 +1,189 @@
+/* comment.css - Style pour la page des commentaires */
+
+.comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comments-container h2 {
+    color: #2f5d2f;
+    padding-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.comment {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: box-shadow 0.3s ease;
+}
+
+.comment:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+    margin: 0;
+    padding-right: 100px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+
+#comment-form-container {
+    margin: 3rem auto 2rem;
+    padding: 2rem;
+    background-color: #eaf4ea;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#comment-form textarea {
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    border: 1px solid #dbe4db;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+#comment-form input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #dbe4db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#comment-form button {
+    padding: 0.7rem 1.5rem;
+    background-color: #3f6d3f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+#comment-form button:hover {
+    background-color: #2f5d2f;
+    transform: scale(1.03);
+}
+
+#new-comment-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.8rem 2rem;
+    background-color: #3f6d3f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
+}
+
+#new-comment-btn:hover {
+    background-color: #2f5d2f;
+    transform: scale(1.05);
+}
+
+.delete-form {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.delete-form input {
+    flex-grow: 1;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.delete-form button {
+    padding: 0.6rem 1rem;
+    background-color: #3f6d3f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-form button:hover {
+    background-color: #2f5d2f;
+}
+
+.no-comments {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 2rem;
+}
+
+.comment-btn-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.comment-btn-container .btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #3f6d3f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.comment-btn-container .btn:hover {
+    background-color: #2f5d2f;
+    transform: scale(1.05);
+}
+

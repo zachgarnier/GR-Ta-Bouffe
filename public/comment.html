@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Commentaires - GR Ta Bouffe</title>
+  <link rel="stylesheet" href="css/button_buttons.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/comment.css">
+</head>
+<body>
+  <header>
+    <h1>Forum des Randonneurs</h1>
+  </header>
+  <main>
+    <div class="comments-container">
+      <h2>Laissez vous porter</h2>
+      <div id="comments-list">
+        <!-- Les commentaires seront chargés ici -->
+      </div>
+      
+      <button id="new-comment-btn" class="btn">Nouveau commentaire</button>
+      
+      <div id="comment-form-container" style="display: none;">
+        <form id="comment-form">
+          <textarea id="comment-text" placeholder="Votre commentaire..." required></textarea>
+          <input type="password" id="comment-password" placeholder="Mot de passe pour suppression" required>
+          <button type="submit" class="btn">Publier</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/comment.js"></script>
+
+  <div class="bottom-buttons">
+    <button onclick="window.location.href='index.html'">Menu</button>
+  </div>
+</body>
+</html>

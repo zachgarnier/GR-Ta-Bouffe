@@ -124,6 +124,110 @@ app.post('/api/voyages', (req, res) => {
   });
 });
 
+// === COMMENTAIRES ===
+
+// Charger les commentaires
+app.get('/api/comments', (req, res) => {
+  fs.readFile('./data/comment.json', 'utf8', (err, data) => {
+    if (err) return res.status(500).send('Erreur lecture commentaires');
+    res.json(JSON.parse(data || '[]'));
+  });
+});
+
+// Ajouter un commentaire avec date
+app.post('/api/add-comment', (req, res) => {
+  const { text, password } = req.body;
+
+  if (!text || !password) return res.status(400).send('Champs manquants');
+
+  fs.readFile('./data/comment.json', 'utf8', (err, data) => {
+    let comments = [];
+    if (!err && data) {
+      try {
+        comments = JSON.parse(data);
+      } catch (e) {
+        return res.status(500).send('Erreur parsing fichier JSON');
+      }
+    }
+
+    comments.push({
+      text,
+      password,
+      date: new Date().toISOString()
+    });
+
+    fs.writeFile('./data/comment.json', JSON.stringify(comments, null, 2), (err) => {
+      if (err) return res.status(500).send('Erreur sauvegarde');
+      res.sendStatus(200);
+    });
+  });
+});
+
+// Supprimer un commentaire par index avec mot de passe
+app.post('/api/delete-comment', (req, res) => {
+  const { index, password } = req.body;
+
+  if (index === undefined || !password) {
+    return res.status(400).send('Paramètres manquants');
+  }
+
+  fs.readFile('./data/comment.json', 'utf8', (err, data) => {
+    if (err) return res.status(500).send('Erreur lecture');
+
+    let comments = [];
+    try {
+      comments = JSON.parse(data || '[]');
+    } catch {
+      return res.status(500).send('Erreur parsing');
+    }
+
+    const comment = comments[index];
+    if (!comment || comment.password !== password) {
+      return res.status(403).send('Mot de passe incorrect ou commentaire inexistant');
+    }
+
+    comments.splice(index, 1);
+
+    fs.writeFile('./data/comment.json', JSON.stringify(comments, null, 2), (err) => {
+      if (err) return res.status(500).send('Erreur sauvegarde');
+      res.sendStatus(200);
+    });
+  });
+});
+
+// Modifier un commentaire (texte seulement) avec mot de passe
+app.post('/api/edit-comment', (req, res) => {
+  const { index, newText, password } = req.body;
+
+  if (index === undefined || !newText || !password) {
+    return res.status(400).send('Paramètres manquants');
+  }
+
+  fs.readFile('./data/comment.json', 'utf8', (err, data) => {
+    if (err) return res.status(500).send('Erreur lecture');
+
+    let comments = [];
+    try {
+      comments = JSON.parse(data || '[]');
+    } catch {
+      return res.status(500).send('Erreur parsing');
+    }
+
+    const comment = comments[index];
+    if (!comment || comment.password !== password) {
+      return res.status(403).send('Mot de passe incorrect ou commentaire inexistant');
+    }
+
+    comment.text = newText;
+    comment.date = new Date().toISOString(); // Mettre à jour la date
+
+    fs.writeFile('./data/comment.json', JSON.stringify(comments, null, 2), (err) => {
+      if (err) return res.status(500).send('Erreur sauvegarde');
+      res.sendStatus(200);
+    });
+  });
+});
+
 // === GIT PUSH (manuel, via bouton) ===
 app.post('/api/git-push', (req, res) => {
   const { password } = req.body;

@@ -7,12 +7,6 @@ body {
   text-align: center;
 }
 
-h1 {
-  color: #3f6d3f;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
 main {
   max-width: 900px;
   margin: auto;
@@ -61,17 +55,7 @@ table {
   margin-bottom: 2rem;
 }
 
-th, td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid #e0e0e0;
-}
 
-th {
-  background-color: #eaf4ea;
-  color: #2f5d2f;
-  font-weight: bold;
-}
 
 .ingredient-line {
   display: flex;
