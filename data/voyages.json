@@ -2,102 +2,197 @@
   {
     "titre": "GR10 dans les Pyrénées",
     "description": "Été 2025 avec Solal et l'équipe de Compiègne.",
-    "dateDepart": "2024-07-10",
-    "dateFin": "2024-07-21",
-    "commentaires": "Les tomates séchées ont fait moisir la purée. Attention à la date de péremption !",
+    "dateDepart": "2024-07-03",
+    "dateFin": "2024-07-16",
+    "commentaires": "Les tomates séchées ont fait moisir la purée.",
     "barresParPersonneParJour": 2,
-    "grammeParBarre": 30,
+    "grammeParBarre": 25,
     "snacksParPersonneParJour": 100,
     "jours": [
       {
-        "nbPersonnes": 3,
+        "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 4
+            "nom": "Petit-dej 1",
+            "multiplicateur": 6
           },
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 2
+            "nom": "Repas 2",
+            "multiplicateur": 6
           }
         ]
       },
       {
-        "nbPersonnes": 3,
+        "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
+            "nom": "Petit-dej 2",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 5",
+            "multiplicateur": 6
           }
         ]
       },
       {
-        "nbPersonnes": 3,
+        "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
+            "nom": "Petit-dej 3",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 2",
+            "multiplicateur": 6
           }
         ]
       },
       {
-        "nbPersonnes": 3,
+        "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 3
+            "nom": "Petit-dej 1",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 1",
+            "multiplicateur": 6
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
+            "nom": "Petit-dej 2",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 3",
+            "multiplicateur": 6
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 6,
+        "recettes": [
+          {
+            "nom": "Petit-dej 3",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 2",
+            "multiplicateur": 6
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 6,
+        "recettes": [
+          {
+            "nom": "Petit-dej 1",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 5",
+            "multiplicateur": 6
+          }
+        ]
+      },
+      {
+        "nbPersonnes": 7,
+        "recettes": [
+          {
+            "nom": "Petit-dej 2",
+            "multiplicateur": 7
+          },
+          {
+            "nom": "Repas 2",
             "multiplicateur": 7
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 7,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
+            "nom": "Petit-dej 3",
+            "multiplicateur": 7
+          },
+          {
+            "nom": "Repas 3",
+            "multiplicateur": 7
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 7,
         "recettes": [
           {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 2
+            "nom": "Petit-dej 3",
+            "multiplicateur": 7
+          },
+          {
+            "nom": "Repas 1",
+            "multiplicateur": 7
           }
         ]
       },
       {
-        "nbPersonnes": 1,
-        "recettes": []
+        "nbPersonnes": 6,
+        "recettes": [
+          {
+            "nom": "Petit-dej 2",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 5",
+            "multiplicateur": 6
+          }
+        ]
       },
       {
-        "nbPersonnes": 1,
-        "recettes": []
+        "nbPersonnes": 6,
+        "recettes": [
+          {
+            "nom": "Petit-dej 3",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 1",
+            "multiplicateur": 6
+          }
+        ]
       },
       {
-        "nbPersonnes": 1,
-        "recettes": []
+        "nbPersonnes": 6,
+        "recettes": [
+          {
+            "nom": "Petit-dej 1",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 5",
+            "multiplicateur": 6
+          }
+        ]
       },
       {
-        "nbPersonnes": 1,
-        "recettes": []
-      },
-      {
-        "nbPersonnes": 1,
-        "recettes": []
+        "nbPersonnes": 6,
+        "recettes": [
+          {
+            "nom": "Petit-dej 2",
+            "multiplicateur": 6
+          },
+          {
+            "nom": "Repas 3",
+            "multiplicateur": 6
+          }
+        ]
       }
     ],
-    "kcalParBarre": 100,
+    "kcalParBarre": 102,
     "kcalParSnacks": 400
   },
   {
@@ -108,70 +203,31 @@
     "jours": [
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 3
-          },
-          {
-            "nom": "gouter",
-            "multiplicateur": 1
-          }
-        ]
+        "recettes": []
       },
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 3
-          }
-        ]
+        "recettes": []
       },
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
-          }
-        ]
+        "recettes": []
       },
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
-          }
-        ]
+        "recettes": []
       },
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
-          }
-        ]
+        "recettes": []
       },
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
-          }
-        ]
+        "recettes": []
       },
       {
         "nbPersonnes": 4,
-        "recettes": [
-          {
-            "nom": "Curry Riz Lentille",
-            "multiplicateur": 1
-          }
-        ]
+        "recettes": []
       }
     ],
     "commentaires": "Je te propose le Tour du mont blanc en août prochain. Pour l'instant on peut être 4 : Mathis, Ambre, Eva, Zacharie. (Tout le monde peut se rajouter en écrivant son nom, et ajoutant des portions de nourriture)",

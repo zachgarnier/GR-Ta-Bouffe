@@ -1,44 +1,232 @@
 [
   {
-    "name": "Curry Riz Lentille",
-    "description": "Un plat chaud et réconfortant",
-    "ingredients": [
-      {
-        "name": "Riz",
-        "quantity": 200,
-        "unit": "grammes",
-        "gramsPerUnit": "1",
-        "Kcal": "130"
-      },
-      {
-        "name": "Nouilles",
-        "quantity": 20
-      },
-      {
-        "name": "Riz",
-        "quantity": 20,
-        "unit": "grammes",
-        "gramsPerUnit": "1",
-        "Kcal": "130"
-      }
-    ],
-    "totalKcal": 312,
-    "totalWeight": 240
-  },
-  {
-    "name": "gouter",
+    "name": "Petit-dej 1",
     "description": "",
     "ingredients": [
       {
-        "name": "pain",
-        "quantity": 40
+        "name": "Flocon d'avoine",
+        "quantity": 100
       },
       {
-        "name": "chocolat",
+        "name": "Raisin sec",
+        "quantity": 8
+      },
+      {
+        "name": "Pépite de chocolat",
+        "quantity": 18
+      },
+      {
+        "name": "Cannelle",
         "quantity": 1
       }
     ],
-    "totalKcal": 610,
-    "totalWeight": 1300
+    "totalKcal": 482.81,
+    "totalWeight": 127
+  },
+  {
+    "name": "Petit-dej 2",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Flocon d'avoine",
+        "quantity": 100
+      },
+      {
+        "name": "Raisin sec",
+        "quantity": 10
+      },
+      {
+        "name": "Lait concentré sucré",
+        "quantity": 8
+      },
+      {
+        "name": "Banane séchée",
+        "quantity": 10
+      },
+      {
+        "name": "Noix",
+        "quantity": 8
+      }
+    ],
+    "totalKcal": 477.31999999999994,
+    "totalWeight": 136
+  },
+  {
+    "name": "Petit-dej 3",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Flocon d'avoine",
+        "quantity": 100
+      },
+      {
+        "name": "Noisette",
+        "quantity": 10,
+        "unit": "g",
+        "gramsPerUnit": "1",
+        "Kcal": "628"
+      },
+      {
+        "name": "Miel",
+        "quantity": 3
+      },
+      {
+        "name": "Pépite de chocolat",
+        "quantity": 10
+      },
+      {
+        "name": "Huile de coco",
+        "quantity": 3
+      },
+      {
+        "name": "Abricot sec",
+        "quantity": 10
+      }
+    ],
+    "totalKcal": 536,
+    "totalWeight": 136
+  },
+  {
+    "name": "Repas 1",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Couscous moyen",
+        "quantity": 140,
+        "unit": "g",
+        "gramsPerUnit": "1",
+        "Kcal": "360"
+      },
+      {
+        "name": "Tomate séchée",
+        "quantity": 30
+      },
+      {
+        "name": "Oignon frit",
+        "quantity": 8
+      }
+    ],
+    "totalKcal": 554,
+    "totalWeight": 178
+  },
+  {
+    "name": "Repas 2",
+    "description": "On peut ajouter des champignons séchées, de la poudre d'épinard, et une soupe",
+    "ingredients": [
+      {
+        "name": "Nouilles asiatiques",
+        "quantity": 150
+      }
+    ],
+    "totalKcal": 738,
+    "totalWeight": 150
+  },
+  {
+    "name": "Repas 3",
+    "description": "Les tomates pourrissent",
+    "ingredients": [
+      {
+        "name": "Purré Mousline",
+        "quantity": 100
+      },
+      {
+        "name": "Lait en poudre",
+        "quantity": 60
+      },
+      {
+        "name": "Tomate séchée",
+        "quantity": 30
+      }
+    ],
+    "totalKcal": 696.4,
+    "totalWeight": 190
+  },
+  {
+    "name": "Repas 4",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Lentille Corail",
+        "quantity": 100
+      },
+      {
+        "name": "Lait coco en poudre",
+        "quantity": 40
+      },
+      {
+        "name": "Oignon frit",
+        "quantity": 8
+      },
+      {
+        "name": "Bouillon de légume",
+        "quantity": 4
+      },
+      {
+        "name": "Noix de cajoux",
+        "quantity": 20
+      },
+      {
+        "name": "Concentré de tomate",
+        "quantity": 10
+      }
+    ],
+    "totalKcal": 504.62,
+    "totalWeight": 182
+  },
+  {
+    "name": "Repas 5",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Couscous 3 céréales",
+        "quantity": 120
+      },
+      {
+        "name": "Abricot sec",
+        "quantity": 20
+      },
+      {
+        "name": "Soupe déshydratée",
+        "quantity": 40
+      }
+    ],
+    "totalKcal": 630.2,
+    "totalWeight": 180
+  },
+  {
+    "name": "Repas 6",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Couscous de poids chiche (lentille corail)",
+        "quantity": 140
+      },
+      {
+        "name": "Soupe déshydratée",
+        "quantity": 40
+      }
+    ],
+    "totalKcal": 658.2,
+    "totalWeight": 180
+  },
+  {
+    "name": "Repas 7",
+    "description": "",
+    "ingredients": [
+      {
+        "name": "Pate 3 minutes",
+        "quantity": 130
+      },
+      {
+        "name": "Poudre d'épinard",
+        "quantity": 40
+      },
+      {
+        "name": "Soupe déshydratée",
+        "quantity": 40
+      }
+    ],
+    "totalKcal": 462.3,
+    "totalWeight": 210
   }
 ]

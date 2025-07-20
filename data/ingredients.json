@@ -1,34 +1,188 @@
 [
   {
-    "name": "Riz",
-    "unit": "grammes",
+    "name": "Couscous moyen",
+    "unit": "g",
     "gramsPerUnit": 1,
-    "Kcal": 130
+    "Kcal": 360
   },
   {
-    "name": "Nouilles",
-    "unit": "grammes",
+    "name": "Nouilles asiatiques",
+    "unit": "g",
     "gramsPerUnit": 1,
-    "Kcal": 130
+    "Kcal": 492
   },
   {
-    "name": "bananes",
-    "unit": "unité(s)",
-    "description": "",
-    "gramsPerUnit": 30,
-    "Kcal": 20
+    "name": "Purré Mousline",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 349
   },
   {
-    "name": "chocolat",
-    "unit": "plaquette",
-    "description": "",
-    "gramsPerUnit": 100,
-    "Kcal": 130
+    "name": "Lentille Corail",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 298
   },
   {
-    "name": "pain",
-    "unit": "tranches",
-    "gramsPerUnit": 30,
-    "Kcal": 40
+    "name": "Couscous 3 céréales",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 360
+  },
+  {
+    "name": "Tomate séchée",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 166
+  },
+  {
+    "name": "Abricot sec",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 241
+  },
+  {
+    "name": "Soupe déshydratée",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 375
+  },
+  {
+    "name": "Poudre d'épinard",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 355
+  },
+  {
+    "name": "Flocon d'avoine",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 357
+  },
+  {
+    "name": "Pomme séchée",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 258
+  },
+  {
+    "name": "Pépite de chocolat",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 566
+  },
+  {
+    "name": "Cannelle",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 1
+  },
+  {
+    "name": "Raisin sec",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 299
+  },
+  {
+    "name": "Banane séchée",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 89
+  },
+  {
+    "name": "Noix",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 698
+  },
+  {
+    "name": "Miel",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 304
+  },
+  {
+    "name": "Huile de coco",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 863
+  },
+  {
+    "name": "Noisette",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 628
+  },
+  {
+    "name": "Amande",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 575
+  },
+  {
+    "name": "Lait en poudre",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 496
+  },
+  {
+    "name": "Couscous de poids chiche (lentille corail)",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 363
+  },
+  {
+    "name": "Oignon frit",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 1
+  },
+  {
+    "name": "Bouillon de légume",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 1
+  },
+  {
+    "name": "Noix de cajoux",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 563
+  },
+  {
+    "name": "Concentré de tomate",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 99
+  },
+  {
+    "name": "Champignon séchée",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 1
+  },
+  {
+    "name": "Lait concentré sucré",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 321
+  },
+  {
+    "name": "Lait coco en poudre",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 210
+  },
+  {
+    "name": "Lait avoine en poudre",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 45
+  },
+  {
+    "name": "Pate 3 minutes",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 131
   }
 ]
