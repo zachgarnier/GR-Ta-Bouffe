@@ -196,41 +196,104 @@
     "kcalParSnacks": 400
   },
   {
-    "titre": "Tour du mont Blanc",
-    "description": "Pourquoi pas faire une petite balade ensemble pour se rappeler le GR10.",
-    "dateDepart": "2026-08-03",
-    "dateFin": "2026-08-09",
+    "titre": "GR34 en Bretagne !",
+    "description": "7 jours de marche sur le sentier du douanier 🙃. On quitte la montagne pour l’océan du 10 au 16 août 2026. Prêt à se régaler ?!",
+    "dateDepart": "2026-08-10",
+    "dateFin": "2026-08-16",
     "jours": [
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 1",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 1",
+            "multiplicateur": 1
+          }
+        ]
       },
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 2",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 2",
+            "multiplicateur": 1
+          }
+        ]
       },
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 3",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 3",
+            "multiplicateur": 1
+          }
+        ]
       },
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 1",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 2",
+            "multiplicateur": 1
+          }
+        ]
       },
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 2",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 5",
+            "multiplicateur": 1
+          }
+        ]
       },
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 3",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 2",
+            "multiplicateur": 1
+          }
+        ]
       },
       {
-        "nbPersonnes": 4,
-        "recettes": []
+        "nbPersonnes": 2,
+        "recettes": [
+          {
+            "nom": "Petit-dej 1",
+            "multiplicateur": 1
+          },
+          {
+            "nom": "Repas 1",
+            "multiplicateur": 1
+          }
+        ]
       }
     ],
-    "commentaires": "Je te propose le Tour du mont blanc en août prochain. Pour l'instant on peut être 4 : Mathis, Ambre, Eva, Zacharie. (Tout le monde peut se rajouter en écrivant son nom, et ajoutant des portions de nourriture)",
+    "commentaires": "",
     "barresParPersonneParJour": 2,
     "grammeParBarre": 30,
     "kcalParBarre": 100,
