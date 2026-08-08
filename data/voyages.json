@@ -202,93 +202,77 @@
     "dateFin": "2026-08-16",
     "jours": [
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
-            "multiplicateur": 1
-          },
-          {
             "nom": "Repas 1",
-            "multiplicateur": 1
+            "multiplicateur": 9
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
             "nom": "Petit-dej 2",
-            "multiplicateur": 1
+            "multiplicateur": 9
           },
           {
             "nom": "Repas 2",
-            "multiplicateur": 1
+            "multiplicateur": 12
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
             "nom": "Petit-dej 3",
-            "multiplicateur": 1
+            "multiplicateur": 12
           },
           {
             "nom": "Repas 3",
-            "multiplicateur": 1
+            "multiplicateur": 9
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
             "nom": "Petit-dej 1",
-            "multiplicateur": 1
-          },
-          {
-            "nom": "Repas 2",
-            "multiplicateur": 1
+            "multiplicateur": 9
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
             "nom": "Petit-dej 2",
-            "multiplicateur": 1
-          },
-          {
-            "nom": "Repas 5",
-            "multiplicateur": 1
+            "multiplicateur": 9
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
             "nom": "Petit-dej 3",
-            "multiplicateur": 1
+            "multiplicateur": 9
           },
           {
             "nom": "Repas 2",
-            "multiplicateur": 1
+            "multiplicateur": 9
           }
         ]
       },
       {
-        "nbPersonnes": 2,
+        "nbPersonnes": 9,
         "recettes": [
           {
             "nom": "Petit-dej 1",
-            "multiplicateur": 1
-          },
-          {
-            "nom": "Repas 1",
-            "multiplicateur": 1
+            "multiplicateur": 9
           }
         ]
       }
