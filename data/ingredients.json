@@ -184,5 +184,17 @@
     "unit": "g",
     "gramsPerUnit": 1,
     "Kcal": 131
+  },
+  {
+    "name": "Gingembre Grillé Caramélisé du TOGO",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 385
+  },
+  {
+    "name": "Cumin",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 400
   }
 ]
