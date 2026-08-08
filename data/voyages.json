@@ -205,7 +205,7 @@
         "nbPersonnes": 9,
         "recettes": [
           {
-            "nom": "Repas 1",
+            "nom": "Repas 3",
             "multiplicateur": 9
           }
         ]
@@ -218,7 +218,7 @@
             "multiplicateur": 9
           },
           {
-            "nom": "Repas 2",
+            "nom": "Repas 1",
             "multiplicateur": 12
           }
         ]
@@ -231,7 +231,7 @@
             "multiplicateur": 12
           },
           {
-            "nom": "Repas 3",
+            "nom": "Repas 2",
             "multiplicateur": 9
           }
         ]
