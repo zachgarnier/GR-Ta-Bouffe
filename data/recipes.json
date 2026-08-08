@@ -113,10 +113,14 @@
       {
         "name": "Gingembre Grillé Caramélisé du TOGO",
         "quantity": 10
+      },
+      {
+        "name": "Soupe déshydratée",
+        "quantity": 40
       }
     ],
-    "totalKcal": 649.23,
-    "totalWeight": 206
+    "totalKcal": 799.23,
+    "totalWeight": 246
   },
   {
     "name": "Repas 2",
@@ -145,10 +149,14 @@
       {
         "name": "Tomate séchée",
         "quantity": 30
+      },
+      {
+        "name": "Soupe déshydratée",
+        "quantity": 40
       }
     ],
-    "totalKcal": 696.4,
-    "totalWeight": 190
+    "totalKcal": 846.4,
+    "totalWeight": 230
   },
   {
     "name": "Repas 4",
