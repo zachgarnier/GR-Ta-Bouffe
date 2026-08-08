@@ -92,10 +92,7 @@
     "ingredients": [
       {
         "name": "Couscous moyen",
-        "quantity": 140,
-        "unit": "g",
-        "gramsPerUnit": "1",
-        "Kcal": "360"
+        "quantity": 140
       },
       {
         "name": "Tomate séchée",
@@ -104,10 +101,22 @@
       {
         "name": "Oignon frit",
         "quantity": 8
+      },
+      {
+        "name": "Raisin sec",
+        "quantity": 15
+      },
+      {
+        "name": "Cumin",
+        "quantity": 3
+      },
+      {
+        "name": "Gingembre Grillé Caramélisé du TOGO",
+        "quantity": 10
       }
     ],
-    "totalKcal": 554,
-    "totalWeight": 178
+    "totalKcal": 649.23,
+    "totalWeight": 206
   },
   {
     "name": "Repas 2",
