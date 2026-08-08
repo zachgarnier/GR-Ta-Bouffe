@@ -255,24 +255,24 @@
         ]
       },
       {
-        "nbPersonnes": 9,
+        "nbPersonnes": 7,
         "recettes": [
           {
             "nom": "Petit-dej 3",
-            "multiplicateur": 9
+            "multiplicateur": 7
           },
           {
             "nom": "Repas 2",
-            "multiplicateur": 9
+            "multiplicateur": 7
           }
         ]
       },
       {
-        "nbPersonnes": 9,
+        "nbPersonnes": 7,
         "recettes": [
           {
             "nom": "Petit-dej 1",
-            "multiplicateur": 9
+            "multiplicateur": 7
           }
         ]
       }
