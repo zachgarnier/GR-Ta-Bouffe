@@ -13,11 +13,11 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
+            "nom": "El Americano",
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 2",
+            "nom": "Nouilles",
             "multiplicateur": 6
           }
         ]
@@ -26,7 +26,7 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 6
           },
           {
@@ -43,7 +43,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 2",
+            "nom": "Nouilles",
             "multiplicateur": 6
           }
         ]
@@ -52,11 +52,11 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
+            "nom": "El Americano",
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 1",
+            "nom": "Couscous",
             "multiplicateur": 6
           }
         ]
@@ -65,11 +65,11 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 3",
+            "nom": "Purré",
             "multiplicateur": 6
           }
         ]
@@ -82,7 +82,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 2",
+            "nom": "Nouilles",
             "multiplicateur": 6
           }
         ]
@@ -91,7 +91,7 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
+            "nom": "El Americano",
             "multiplicateur": 6
           },
           {
@@ -104,11 +104,11 @@
         "nbPersonnes": 7,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 7
           },
           {
-            "nom": "Repas 2",
+            "nom": "Nouilles",
             "multiplicateur": 7
           }
         ]
@@ -121,7 +121,7 @@
             "multiplicateur": 7
           },
           {
-            "nom": "Repas 3",
+            "nom": "Purré",
             "multiplicateur": 7
           }
         ]
@@ -134,7 +134,7 @@
             "multiplicateur": 7
           },
           {
-            "nom": "Repas 1",
+            "nom": "Couscous",
             "multiplicateur": 7
           }
         ]
@@ -143,7 +143,7 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 6
           },
           {
@@ -160,7 +160,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 1",
+            "nom": "Couscous",
             "multiplicateur": 6
           }
         ]
@@ -169,7 +169,7 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
+            "nom": "El Americano",
             "multiplicateur": 6
           },
           {
@@ -182,11 +182,11 @@
         "nbPersonnes": 6,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 3",
+            "nom": "Purré",
             "multiplicateur": 6
           }
         ]
@@ -205,7 +205,7 @@
         "nbPersonnes": 9,
         "recettes": [
           {
-            "nom": "Repas 3",
+            "nom": "Purré",
             "multiplicateur": 9
           }
         ]
@@ -214,11 +214,11 @@
         "nbPersonnes": 9,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 9
           },
           {
-            "nom": "Repas 1",
+            "nom": "Couscous",
             "multiplicateur": 12
           }
         ]
@@ -231,7 +231,7 @@
             "multiplicateur": 12
           },
           {
-            "nom": "Repas 2",
+            "nom": "Nouilles",
             "multiplicateur": 9
           }
         ]
@@ -240,7 +240,7 @@
         "nbPersonnes": 9,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
+            "nom": "El Americano",
             "multiplicateur": 9
           }
         ]
@@ -249,7 +249,7 @@
         "nbPersonnes": 9,
         "recettes": [
           {
-            "nom": "Petit-dej 2",
+            "nom": "Poridge fruité",
             "multiplicateur": 9
           }
         ]
@@ -262,7 +262,7 @@
             "multiplicateur": 7
           },
           {
-            "nom": "Repas 2",
+            "nom": "Nouilles",
             "multiplicateur": 7
           }
         ]
@@ -271,7 +271,7 @@
         "nbPersonnes": 7,
         "recettes": [
           {
-            "nom": "Petit-dej 1",
+            "nom": "El Americano",
             "multiplicateur": 7
           }
         ]

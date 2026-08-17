@@ -43,8 +43,8 @@
   },
   {
     "name": "Soupe déshydratée",
-    "unit": "g",
-    "gramsPerUnit": 1,
+    "unit": "sachet",
+    "gramsPerUnit": 40,
     "Kcal": 375
   },
   {
@@ -201,6 +201,24 @@
     "name": "Bouillon",
     "unit": "cube",
     "gramsPerUnit": 10,
-    "Kcal": 25
+    "Kcal": 250
+  },
+  {
+    "name": "Sucre vanillé",
+    "unit": "sachet",
+    "gramsPerUnit": 8,
+    "Kcal": 400
+  },
+  {
+    "name": "Beurre de cacahuète",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 600
+  },
+  {
+    "name": "Weetabix",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 360
   }
 ]

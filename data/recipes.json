@@ -1,55 +1,93 @@
 [
   {
-    "name": "Petit-dej 1",
-    "description": "",
+    "name": "El Americano",
+    "description": "Weetabix peut être remplacé par flocon d'avoine",
     "ingredients": [
       {
-        "name": "Flocon d'avoine",
-        "quantity": 100
+        "name": "Weetabix",
+        "quantity": 80
       },
       {
         "name": "Raisin sec",
-        "quantity": 8
+        "quantity": 15
       },
       {
         "name": "Pépite de chocolat",
-        "quantity": 18
+        "quantity": 20
       },
       {
-        "name": "Cannelle",
-        "quantity": 1
+        "name": "Beurre de cacahuète",
+        "quantity": 15
+      },
+      {
+        "name": "M&Ms",
+        "quantity": 20
+      },
+      {
+        "name": "Lait concentré sucré",
+        "quantity": 20
+      },
+      {
+        "name": "Sucre vanillé",
+        "quantity": 1,
+        "unit": "sachet",
+        "gramsPerUnit": "8",
+        "Kcal": "400"
       }
     ],
-    "totalKcal": 482.81,
-    "totalWeight": 127
+    "totalKcal": 731,
+    "totalWeight": 178
   },
   {
-    "name": "Petit-dej 2",
+    "name": "Poridge fruité",
     "description": "",
     "ingredients": [
       {
         "name": "Flocon d'avoine",
-        "quantity": 100
+        "quantity": 60
       },
       {
         "name": "Raisin sec",
-        "quantity": 10
-      },
-      {
-        "name": "Lait concentré sucré",
-        "quantity": 8
+        "quantity": 15
       },
       {
         "name": "Banane séchée",
-        "quantity": 10
+        "quantity": 15
       },
       {
         "name": "Noix",
-        "quantity": 8
+        "quantity": 15
+      },
+      {
+        "name": "Pépite de chocolat",
+        "quantity": 20
+      },
+      {
+        "name": "Sucre vanillé",
+        "quantity": 1,
+        "unit": "sachet",
+        "gramsPerUnit": "8",
+        "Kcal": "400"
+      },
+      {
+        "name": "Noisette",
+        "quantity": 15
+      },
+      {
+        "name": "Abricot sec",
+        "quantity": 15
+      },
+      {
+        "name": "Huile de coco",
+        "quantity": 10
+      },
+      {
+        "name": "Miel",
+        "quantity": 15
       }
     ],
-    "totalKcal": 477.31999999999994,
-    "totalWeight": 136
+    "totalKcal": 785,
+    "totalWeight": 188
   },
   {
     "name": "Petit-dej 3",
@@ -57,14 +95,11 @@
     "ingredients": [
       {
         "name": "Flocon d'avoine",
-        "quantity": 100
+        "quantity": 80
       },
       {
         "name": "Noisette",
-        "quantity": 10,
-        "unit": "g",
-        "gramsPerUnit": "1",
-        "Kcal": "628"
+        "quantity": 10
       },
       {
         "name": "Miel",
@@ -72,7 +107,7 @@
       },
       {
         "name": "Pépite de chocolat",
-        "quantity": 10
+        "quantity": 12
       },
       {
         "name": "Huile de coco",
@@ -83,16 +118,16 @@
         "quantity": 10
       }
     ],
-    "totalKcal": 536,
-    "totalWeight": 136
+    "totalKcal": 475.43,
+    "totalWeight": 118
   },
   {
-    "name": "Repas 1",
+    "name": "Couscous",
     "description": "",
     "ingredients": [
       {
         "name": "Couscous moyen",
-        "quantity": 140
+        "quantity": 150
       },
       {
         "name": "Tomate séchée",
@@ -100,7 +135,7 @@
       },
       {
         "name": "Oignon frit",
-        "quantity": 8
+        "quantity": 10
       },
       {
         "name": "Raisin sec",
@@ -108,7 +143,7 @@
       },
       {
         "name": "Cumin",
-        "quantity": 3
+        "quantity": 15
       },
       {
         "name": "Gingembre Grillé Caramélisé du TOGO",
@@ -116,26 +151,30 @@
       },
       {
         "name": "Soupe déshydratée",
-        "quantity": 40
+        "quantity": 1
       }
     ],
-    "totalKcal": 799.23,
-    "totalWeight": 246
+    "totalKcal": 883.25,
+    "totalWeight": 270
   },
   {
-    "name": "Repas 2",
+    "name": "Nouilles",
     "description": "On peut ajouter des champignons séchées, de la poudre d'épinard, et une soupe",
     "ingredients": [
       {
         "name": "Nouilles asiatiques",
         "quantity": 150
+      },
+      {
+        "name": "Soupe déshydratée",
+        "quantity": 1
       }
     ],
-    "totalKcal": 738,
-    "totalWeight": 150
+    "totalKcal": 888,
+    "totalWeight": 190
   },
   {
-    "name": "Repas 3",
+    "name": "Purré",
     "description": "Les tomates pourrissent",
     "ingredients": [
       {
@@ -152,7 +191,7 @@
       },
       {
         "name": "Soupe déshydratée",
-        "quantity": 40
+        "quantity": 1
       }
     ],
     "totalKcal": 846.4,
@@ -176,7 +215,10 @@
       },
       {
         "name": "Bouillon",
-        "quantity": 1
+        "quantity": 1,
+        "unit": "cube",
+        "gramsPerUnit": "10",
+        "Kcal": "250"
       },
       {
         "name": "Noix de cajoux",
@@ -187,7 +229,7 @@
         "quantity": 10
       }
     ],
-    "totalKcal": 507.0799999999999,
+    "totalKcal": 530,
     "totalWeight": 188
   },
   {
@@ -204,7 +246,7 @@
       },
       {
         "name": "Soupe déshydratée",
-        "quantity": 40
+        "quantity": 1
       }
     ],
     "totalKcal": 630.2,
@@ -220,7 +262,7 @@
       },
       {
         "name": "Soupe déshydratée",
-        "quantity": 40
+        "quantity": 1
       }
     ],
     "totalKcal": 658.2,
@@ -240,7 +282,7 @@
       },
       {
         "name": "Soupe déshydratée",
-        "quantity": 40
+        "quantity": 1
       }
     ],
     "totalKcal": 462.3,
