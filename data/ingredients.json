@@ -196,5 +196,17 @@
     "unit": "g",
     "gramsPerUnit": 1,
     "Kcal": 400
+  },
+  {
+    "name": "M&Ms",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 492
+  },
+  {
+    "name": "Bouillon",
+    "unit": "cube",
+    "gramsPerUnit": 10,
+    "Kcal": 25
   }
 ]
