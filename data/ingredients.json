@@ -220,5 +220,11 @@
     "unit": "g",
     "gramsPerUnit": 1,
     "Kcal": 360
+  },
+  {
+    "name": "Muscade",
+    "unit": "g",
+    "gramsPerUnit": 1,
+    "Kcal": 525
   }
 ]

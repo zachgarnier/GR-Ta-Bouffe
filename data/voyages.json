@@ -30,7 +30,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 5",
+            "nom": "Couscous 3 céréales",
             "multiplicateur": 6
           }
         ]
@@ -95,7 +95,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 5",
+            "nom": "Couscous 3 céréales",
             "multiplicateur": 6
           }
         ]
@@ -147,7 +147,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 5",
+            "nom": "Couscous 3 céréales",
             "multiplicateur": 6
           }
         ]
@@ -173,7 +173,7 @@
             "multiplicateur": 6
           },
           {
-            "nom": "Repas 5",
+            "nom": "Couscous 3 céréales",
             "multiplicateur": 6
           }
         ]
@@ -196,7 +196,7 @@
     "kcalParSnacks": 400
   },
   {
-    "titre": "GR34 en Bretagne !",
+    "titre": "GR34 en Bretagne",
     "description": "7 jours de marche sur le sentier du douanier 🙃. On quitte la montagne pour l’océan du 10 au 16 août 2026. Prêt à se régaler ?!",
     "dateDepart": "2026-08-10",
     "dateFin": "2026-08-16",

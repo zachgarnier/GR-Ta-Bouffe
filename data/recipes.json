@@ -192,13 +192,17 @@
       {
         "name": "Soupe déshydratée",
         "quantity": 1
+      },
+      {
+        "name": "Muscade",
+        "quantity": 15
       }
     ],
-    "totalKcal": 846.4,
-    "totalWeight": 230
+    "totalKcal": 925.15,
+    "totalWeight": 245
   },
   {
-    "name": "Repas 4",
+    "name": "Lentille Corail",
     "description": "",
     "ingredients": [
       {
@@ -215,10 +219,7 @@
       },
       {
         "name": "Bouillon",
-        "quantity": 1,
-        "unit": "cube",
-        "gramsPerUnit": "10",
-        "Kcal": "250"
+        "quantity": 1
       },
       {
         "name": "Noix de cajoux",
@@ -229,11 +230,11 @@
         "quantity": 10
       }
     ],
-    "totalKcal": 530,
+    "totalKcal": 529.5799999999999,
     "totalWeight": 188
   },
   {
-    "name": "Repas 5",
+    "name": "Couscous 3 céréales",
     "description": "",
     "ingredients": [
       {
@@ -253,7 +254,7 @@
     "totalWeight": 180
   },
   {
-    "name": "Repas 6",
+    "name": "Couscous poids chiche",
     "description": "",
     "ingredients": [
       {
@@ -269,7 +270,7 @@
     "totalWeight": 180
   },
   {
-    "name": "Repas 7",
+    "name": "Pate tomate",
     "description": "",
     "ingredients": [
       {
@@ -277,15 +278,27 @@
         "quantity": 130
       },
       {
-        "name": "Poudre d'épinard",
-        "quantity": 40
-      },
-      {
         "name": "Soupe déshydratée",
         "quantity": 1
+      },
+      {
+        "name": "Tomate séchée",
+        "quantity": 30
+      },
+      {
+        "name": "Champignon séchée",
+        "quantity": 30
+      },
+      {
+        "name": "Concentré de tomate",
+        "quantity": 30
+      },
+      {
+        "name": "Oignon frit",
+        "quantity": 10
       }
     ],
-    "totalKcal": 462.3,
-    "totalWeight": 210
+    "totalKcal": 400.20000000000005,
+    "totalWeight": 270
   }
 ]
