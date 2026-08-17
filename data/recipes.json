@@ -175,8 +175,8 @@
         "quantity": 8
       },
       {
-        "name": "Bouillon de légume",
-        "quantity": 4
+        "name": "Bouillon",
+        "quantity": 1
       },
       {
         "name": "Noix de cajoux",
@@ -187,8 +187,8 @@
         "quantity": 10
       }
     ],
-    "totalKcal": 504.62,
-    "totalWeight": 182
+    "totalKcal": 507.0799999999999,
+    "totalWeight": 188
   },
   {
     "name": "Repas 5",
